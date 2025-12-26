@@ -19,7 +19,18 @@
       }
     ],
     "paths": {
-      "@/*": ["./*"]
+      "@/*": ["./*"],
+      "@styles/*": ["./src/styles/*"],
+      "@fonts": ["./src/ui/fonts"],
+      "@utils": ["./src/utils"],
+      "@components": ["./src/ui/components"],
+      "@atoms": ["./src/ui/components/atoms"],
+      "@molecules": ["./src/ui/components/molecules"],
+      "@organisms": ["./src/ui/components/organisms"],
+      "@templates": ["./src/ui/components/templates"],
+      "@types": ["./src/ui/types"],
+      "@hooks": ["./src/hooks"],
+      "@store": ["./src/store"]
     }
   },
   "include": [

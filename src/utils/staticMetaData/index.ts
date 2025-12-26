@@ -1,0 +1,1 @@
+export { staticMetaData } from "./staticMetaData";
