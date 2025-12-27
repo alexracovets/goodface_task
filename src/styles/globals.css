@@ -2,6 +2,9 @@
 @import "tw-animate-css";
 
 @theme {
+  --font-space-grotesk: var(--font-space-grotesk);
+
+  --color-background: #fafafa;
   --color-base-white: #ffffff;
   --color-base-black: #000000;
   --color-primary-50: #eeedfd;
@@ -14,4 +17,23 @@
   --color-primary-700: #3c32a7;
   --color-primary-800: #2f2781;
   --color-primary-900: #241e63;
+  --color-grey-50: #f9fafb;
+  --color-grey-100: #f3f4f6;
+  --color-grey-200: #e5e7eb;
+  --color-grey-300: #d2d6db;
+  --color-grey-400: #9da4ae;
+  --color-grey-500: #6c737f;
+  --color-grey-600: #4d5761;
+  --color-grey-700: #384250;
+  --color-grey-800: #1f2a37;
+  --color-grey-900: #111927;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+button,
+a {
+  cursor: pointer;
 }

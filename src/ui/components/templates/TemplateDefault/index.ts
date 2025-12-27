@@ -1,1 +1,0 @@
-export { TemplateDefault } from "./TemplateDefault";
