@@ -1,1 +1,0 @@
-export { LogoNavPart } from "./LogoNavPart";
