@@ -7,33 +7,35 @@ import { AtomLinkType } from "@types";
 import { cn } from "@utils";
 
 export const variantsAtomLink = cva("whitespace-nowrap inline-block w-fit", {
-    variants: {
-        variant: {
-            default: "",
-        },
+  variants: {
+    variant: {
+      default: "",
+      navigation_additional_item:
+        "text-[13px] text-grey-800 leading-[16px] font-[400] pl-[12px] pr-[8px] py-[4px] bg-transparent border-none",
     },
-    defaultVariants: {
-        variant: "default",
-    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
 });
 
 export const AtomLink = ({
-    href,
-    className,
-    variant,
-    target,
-    onClick,
-    rel,
-    ...props
+  href,
+  className,
+  variant,
+  target,
+  onClick,
+  rel,
+  ...props
 }: AtomLinkType) => {
-    return (
-        <Link
-            rel={rel}
-            href={href}
-            className={cn(variantsAtomLink({ variant, className }))}
-            target={target}
-            onClick={onClick}
-            {...props}
-        />
-    );
+  return (
+    <Link
+      rel={rel}
+      href={href}
+      className={cn(variantsAtomLink({ variant, className }))}
+      target={target}
+      onClick={onClick}
+      {...props}
+    />
+  );
 };

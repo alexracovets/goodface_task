@@ -13,7 +13,12 @@ export const variantsAtomText = cva("", {
       logo: "text-[24px] font-[500] leading-[32px] text-grey-800",
       notification_count: cn("text-[12px] font-[600] text-base-white"),
       user_name: cn("text-[14px] font-[500] leading-[20px] text-grey-800"),
-      user_email: cn("text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-600"),
+      user_email: cn(
+        "text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-600"
+      ),
+      navigation_section_title: cn(
+        "text-[12px] font-[500] leading-[20px] text-grey-700 tracking-[0.7px] uppercase"
+      ),
     },
   },
   defaultVariants: {

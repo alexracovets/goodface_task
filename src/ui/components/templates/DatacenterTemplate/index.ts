@@ -1,0 +1,1 @@
+export { DatacenterTemplate } from "./DatacenterTemplate";

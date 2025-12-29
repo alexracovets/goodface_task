@@ -1,6 +1,6 @@
 "use client";
 
-import { AtomButton, AtomText, DotsVertical } from "@atoms";
+import { AtomButton, AtomText, DotsVerticalIcon } from "@atoms";
 
 export const NavigationFooter = () => {
   return (
@@ -10,7 +10,7 @@ export const NavigationFooter = () => {
         <AtomText variant="user_email">henry.smith@gmail.com</AtomText>
       </div>
       <AtomButton variant="user_details">
-        <DotsVertical className="w-[20px] h-[20px]" />
+        <DotsVerticalIcon className="w-[20px] h-[20px]" />
       </AtomButton>
     </div>
   );

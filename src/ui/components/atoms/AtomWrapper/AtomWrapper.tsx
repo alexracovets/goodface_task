@@ -21,6 +21,13 @@ export const variantsAtomWrapper = cva("", {
         "absolute top-[4px] right-[-4px]",
         "w-[20px] h-[16px] flex items-center justify-center bg-primary-400 rounded-[20px] outline outline-[2px] outline-base-white"
       ),
+      navigation_content:
+        "flex flex-col w-full p-[16px] gap-y-[16px] overflow-y-auto min-h-0",
+      navigation_section: "flex flex-col w-full gap-y-[8px]",
+      navigation_section_content: "flex flex-col w-full gap-y-[4px]",
+      navigation_additional: "flex flex-col w-full gap-y-[4px]",
+      navigation_additional_content: "flex flex-col w-full gap-y-[4px]",
+      product_main_content: "flex flex-col gap-y-[24px] w-full",
     },
   },
   defaultVariants: {

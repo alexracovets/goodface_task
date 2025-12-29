@@ -1,6 +1,6 @@
 "use client";
 
-import { AtomLink, AtomButton, ChevronLeft } from "@atoms";
+import { AtomLink, AtomButton, ChevronLeftIcon } from "@atoms";
 
 export const HeaderProduct = () => {
   return (
@@ -8,7 +8,7 @@ export const HeaderProduct = () => {
       <nav>
         <AtomLink href="/" variant="default">
           <AtomButton variant="back">
-            <ChevronLeft className="w-[16px] h-[16px]" />
+            <ChevronLeftIcon className="w-[16px] h-[16px]" />
             Back to all
           </AtomButton>
         </AtomLink>

@@ -1,6 +1,6 @@
 "use client";
 
-export const DotsVertical = ({ className }: { className?: string }) => {
+export const DotsVerticalIcon = ({ className }: { className?: string }) => {
   return (
     <div className={className}>
       <svg
@@ -8,7 +8,7 @@ export const DotsVertical = ({ className }: { className?: string }) => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
         fill="none"
-        stroke="#000000"
+        stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
         strokeLinejoin="round"
