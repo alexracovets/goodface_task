@@ -20,11 +20,21 @@ export const variantsAtomText = cva("", {
       navigation_section_title: cn(
         "text-[12px] font-[500] leading-[20px] text-grey-700 tracking-[0.7px] uppercase"
       ),
-      hero_description: cn("text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-500"),
-      form_part_title: cn("text-[14px] font-[700] leading-[20px] tracking-[0.2px] text-grey-800"),
-      form_part_description: cn("text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-500"),
-      table_data: cn("text-[14px] text-right font-[500] leading-[20px] tracking-[-0.2px] text-grey-700 py-[8px] px-[12px]"),
-      table_header: cn("text-[14px] text-right font-[500] leading-[20px] text-grey-500 py-[8px] px-[12px]"),
+      hero_description: cn(
+        "text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-500"
+      ),
+      form_part_title: cn(
+        "text-[14px] font-[700] leading-[20px] tracking-[0.2px] text-grey-800"
+      ),
+      form_part_description: cn(
+        "text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-500"
+      ),
+      table_data: cn(
+        "text-[14px] text-right font-[500] leading-[20px] tracking-[-0.2px] text-grey-700 py-[8px] px-[12px]"
+      ),
+      table_header: cn(
+        "text-[14px] text-right font-[500] leading-[20px] text-grey-500 py-[8px] px-[12px]"
+      ),
     },
   },
   defaultVariants: {

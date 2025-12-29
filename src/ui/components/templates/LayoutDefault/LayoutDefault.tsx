@@ -6,12 +6,10 @@ import "@styles/globals.css";
 
 export const LayoutDefault = ({ children }: ChildrenType) => {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      data-scroll-behavior="smooth"
-    >
-      <body className={`${space_grotesk.className} antialiased bg-background h-100dvh w-full overflow-hidden`}>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+      <body
+        className={`${space_grotesk.className} antialiased bg-background h-100dvh w-full overflow-hidden`}
+      >
         {children}
       </body>
     </html>

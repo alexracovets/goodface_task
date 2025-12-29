@@ -8,5 +8,5 @@ import { ChildrenType } from "@types";
 export const metadata: Metadata = staticMetaData;
 
 export default function ProductLayout({ children }: ChildrenType) {
-    return <LayoutProduct>{children}</LayoutProduct>;
+  return <LayoutProduct>{children}</LayoutProduct>;
 }

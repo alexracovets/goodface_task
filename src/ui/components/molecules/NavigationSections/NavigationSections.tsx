@@ -3,7 +3,22 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 
-import { AtomButton, AtomLink, AtomText, AtomWrapper, LiveLog, EyeIcon, MonitorIcon, SelectAll, ClipboardList, UsersIcon, BasketIcon, KeyIcon, CoinIcon, UserPlusIcon } from "@atoms";
+import {
+  AtomButton,
+  AtomLink,
+  AtomText,
+  AtomWrapper,
+  LiveLog,
+  EyeIcon,
+  MonitorIcon,
+  SelectAll,
+  ClipboardList,
+  UsersIcon,
+  BasketIcon,
+  KeyIcon,
+  CoinIcon,
+  UserPlusIcon,
+} from "@atoms";
 
 import { NavigationIconType } from "@types";
 
@@ -81,7 +96,6 @@ const navigationSections = [
   },
 ];
 
-
 export const NavigationSections = () => {
   const pathname = usePathname();
   return (
@@ -89,7 +103,9 @@ export const NavigationSections = () => {
       {navigationSections.map((section, idx) => {
         return (
           <AtomWrapper variant="navigation_section" key={idx}>
-            <AtomText variant="navigation_section_title">{section.title}</AtomText>
+            <AtomText variant="navigation_section_title">
+              {section.title}
+            </AtomText>
             <AtomWrapper variant="navigation_section_content">
               {section.content.map((item) => (
                 <AtomButton
@@ -102,13 +118,14 @@ export const NavigationSections = () => {
                     <AtomWrapper variant="navigation_item_content">
                       {React.isValidElement(item.icon)
                         ? React.cloneElement(
-                          item.icon as React.ReactElement<NavigationIconType>,
-                          {
-                            className: `w-[20px] h-[20px] ${(item.icon.props as { className?: string })
-                              ?.className || ""
+                            item.icon as React.ReactElement<NavigationIconType>,
+                            {
+                              className: `w-[20px] h-[20px] ${
+                                (item.icon.props as { className?: string })
+                                  ?.className || ""
                               }`.trim(),
-                          }
-                        )
+                            }
+                          )
                         : item.icon}
                       {item.name}
                     </AtomWrapper>
@@ -117,10 +134,9 @@ export const NavigationSections = () => {
                 </AtomButton>
               ))}
             </AtomWrapper>
-          </AtomWrapper >
-        )
-      })
-      }
+          </AtomWrapper>
+        );
+      })}
     </>
   );
 };

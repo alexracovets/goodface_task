@@ -5,6 +5,8 @@ import * as LabelPrimitive from "@radix-ui/react-label";
 
 import { variantsAtomFormLabel } from "@atoms";
 
-export interface AtomFormLabelType extends React.ComponentProps<typeof LabelPrimitive.Root> {
-    variant?: VariantProps<typeof variantsAtomFormLabel>["variant"];
+export interface AtomFormLabelType extends React.ComponentProps<
+  typeof LabelPrimitive.Root
+> {
+  variant?: VariantProps<typeof variantsAtomFormLabel>["variant"];
 }

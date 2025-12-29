@@ -15,7 +15,6 @@ import {
 
 import { NavigationIconType } from "@types";
 
-
 const navigationAdditional = [
   {
     name: "Billing",
@@ -64,13 +63,14 @@ export const NavigationAdditional = () => {
             <AccordionTrigger>
               {React.isValidElement(item.icon)
                 ? React.cloneElement(
-                  item.icon as React.ReactElement<NavigationIconType>,
-                  {
-                    className: `w-[20px] h-[20px] ${(item.icon.props as { className?: string })
-                      ?.className || ""
+                    item.icon as React.ReactElement<NavigationIconType>,
+                    {
+                      className: `w-[20px] h-[20px] ${
+                        (item.icon.props as { className?: string })
+                          ?.className || ""
                       }`.trim(),
-                  }
-                )
+                    }
+                  )
                 : item.icon}
               {item.name}
             </AccordionTrigger>

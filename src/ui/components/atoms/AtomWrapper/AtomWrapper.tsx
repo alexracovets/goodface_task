@@ -29,7 +29,8 @@ export const variantsAtomWrapper = cva("", {
       navigation_additional_content:
         "flex flex-col w-full gap-y-[4px] px-[8px]",
       product_main_content: "flex flex-col gap-y-[24px] w-full",
-      navigation_item_content: "flex items-center justify-between gap-x-[16px] pl-[12px] pr-[8px]",
+      navigation_item_content:
+        "flex items-center justify-between gap-x-[16px] pl-[12px] pr-[8px]",
       page_hero_block: "flex w-full gap-x-[16px]",
       hero_content: "flex flex-col gap-y-[4px]",
       form_part_info: "flex flex-col w-full",

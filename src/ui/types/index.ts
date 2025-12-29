@@ -8,4 +8,4 @@ export type { TableDataType } from "./TableDataType";
 export type { ChildrenType } from "./ChildrenType";
 export type { AtomLinkType } from "./AtomLinkType";
 export type { AtomTextType } from "./AtomTextType";
-export type { AtomHRType } from "./AtomHRType"; 
+export type { AtomHRType } from "./AtomHRType";

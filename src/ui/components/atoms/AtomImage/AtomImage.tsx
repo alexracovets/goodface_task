@@ -10,7 +10,7 @@ export const variantsAtomImage = cva("block overflow-hidden select-none", {
   variants: {
     variant: {
       default: "",
-      hero: "w-[56px] min-w-[56px] h-[56px] min-h-[56px]"
+      hero: "w-[56px] min-w-[56px] h-[56px] min-h-[56px]",
     },
   },
 });

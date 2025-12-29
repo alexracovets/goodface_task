@@ -65,7 +65,9 @@ function AccordionTrigger({
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
   variant?: VariantProps<typeof variantsAccordionTrigger>["variant"];
-  variantInner?: VariantProps<typeof variantsAccordionTriggerInner>["variantInner"];
+  variantInner?: VariantProps<
+    typeof variantsAccordionTriggerInner
+  >["variantInner"];
 }) {
   return (
     <AccordionPrimitive.Header className="flex">
