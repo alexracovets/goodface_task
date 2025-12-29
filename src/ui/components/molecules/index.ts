@@ -1,5 +1,5 @@
 export { NavigationAdditional } from "./NavigationAdditional";
-export { NavigationSection } from "./NavigationSection";
+export { NavigationSections } from "./NavigationSections";
 export { NavigationContent } from "./NavigationContent";
 export { NavigationHeader } from "./NavigationHeader";
 export { NavigationFooter } from "./NavigationFooter";

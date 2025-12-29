@@ -11,7 +11,7 @@ export const LiveLog = ({ className }: NavigationIconType) => {
           cy="10"
           r="6"
           fill="#00B67A"
-          fill-opacity="0.2"
+          fillOpacity="0.2"
           className="animate-pulse"
         />
         <circle

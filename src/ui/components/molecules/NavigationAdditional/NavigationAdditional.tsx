@@ -7,39 +7,70 @@ import {
   AccordionTrigger,
   AccordionItem,
   AtomWrapper,
+  ReceiptIcon,
+  HelpCircle,
   Accordion,
   AtomLink,
 } from "@atoms";
 
 import { NavigationIconType } from "@types";
 
-interface NavigationAdditionalProps {
-  additional: {
-    name: string;
-    icon: React.ReactNode;
-    options: { name: string; link: string }[];
-  }[];
-}
 
-export const NavigationAdditional = ({
-  additional,
-}: NavigationAdditionalProps) => {
+const navigationAdditional = [
+  {
+    name: "Billing",
+    icon: <ReceiptIcon />,
+    options: [
+      {
+        name: "Billing 1",
+        link: "#",
+      },
+      {
+        name: "Billing 2",
+        link: "#",
+      },
+      {
+        name: "Billing 3",
+        link: "#",
+      },
+    ],
+  },
+  {
+    name: "Help",
+    icon: <HelpCircle />,
+    options: [
+      {
+        name: "Help 1",
+        link: "#",
+      },
+      {
+        name: "Help 2",
+        link: "#",
+      },
+      {
+        name: "Help 3",
+        link: "#",
+      },
+    ],
+  },
+];
+
+export const NavigationAdditional = () => {
   return (
     <AtomWrapper variant="navigation_additional" asChild>
       <Accordion type="multiple" className="w-full">
-        {additional.map((item, idx) => (
+        {navigationAdditional.map((item, idx) => (
           <AccordionItem key={idx} value={item.name}>
             <AccordionTrigger>
               {React.isValidElement(item.icon)
                 ? React.cloneElement(
-                    item.icon as React.ReactElement<NavigationIconType>,
-                    {
-                      className: `w-[20px] h-[20px] ${
-                        (item.icon.props as { className?: string })
-                          ?.className || ""
+                  item.icon as React.ReactElement<NavigationIconType>,
+                  {
+                    className: `w-[20px] h-[20px] ${(item.icon.props as { className?: string })
+                      ?.className || ""
                       }`.trim(),
-                    }
-                  )
+                  }
+                )
                 : item.icon}
               {item.name}
             </AccordionTrigger>
