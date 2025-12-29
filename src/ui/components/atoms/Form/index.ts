@@ -1,9 +1,11 @@
 export {
-  Form,
-  FormItem,
-  FormLabel,
-  FormControl,
+  variantsFormLabel,
+  formItemVariants,
   FormDescription,
+  FormControl,
   FormMessage,
+  FormLabel,
   FormField,
+  FormItem,
+  Form,
 } from "./Form";

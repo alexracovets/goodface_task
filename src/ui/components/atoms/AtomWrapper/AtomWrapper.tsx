@@ -34,6 +34,9 @@ export const variantsAtomWrapper = cva("", {
       page_hero_block: "flex w-full gap-x-[16px]",
       hero_content: "flex flex-col gap-y-[4px]",
       form_part_info: "flex flex-col w-full",
+      slider_separator: "flex justify-between items-center",
+      slider_separator_item:
+        "flex justify-center items-center first:justify-start last:justify-end",
     },
   },
   defaultVariants: {

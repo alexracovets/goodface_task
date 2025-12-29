@@ -18,7 +18,7 @@ export const FormProxies = () => {
       location: "us",
     },
   });
-  console.log(form.watch("count"));
+  
   const onSubmit = useCallback(() => {
     console.log(form.getValues());
   }, [form]);

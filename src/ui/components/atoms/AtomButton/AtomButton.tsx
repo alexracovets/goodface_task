@@ -26,6 +26,8 @@ export const variantsAtomButton = cva(
           "[&[data-active='true']]:text-primary-500 [&[data-active='true']]:bg-primary-50  hover:text-primary-500 hover:bg-primary-50",
           "transition-all duration-300 ease-in"
         ),
+        destructive:
+          "text-[14px] font-[700] leading-[20px] text-primary-500 flex items-center justify-center gap-x-[8px] bg-base-white w-fit px-[16px] py-[4px]",
       },
     },
   }

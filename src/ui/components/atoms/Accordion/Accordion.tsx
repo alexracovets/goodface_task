@@ -25,7 +25,7 @@ function AccordionItem({
 }
 
 const variantsAccordionTrigger = cva(
-  "flex items-center justify-between gap-x-[16px] w-full focus-visible:border-ring focus-visible:ring-ring/50 transition-all outline-none focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-90",
+  "flex items-center justify-between gap-x-[16px] w-full transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-90",
   {
     variants: {
       variant: {
@@ -93,7 +93,7 @@ function AccordionContent({
   return (
     <AccordionPrimitive.Content
       data-slot="accordion-content"
-      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
+      className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden"
       {...props}
     >
       <div className={cn("pt-[4px] pb-[12px]", className)}>{children}</div>

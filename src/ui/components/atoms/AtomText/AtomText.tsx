@@ -35,6 +35,9 @@ export const variantsAtomText = cva("", {
       table_header: cn(
         "text-[14px] text-right font-[500] leading-[20px] text-grey-500 py-[8px] px-[12px]"
       ),
+      slider_separator_item: cn(
+        "text-[14px] leading-[20px] tracking-[-0.2px] text-grey-500"
+      ),
     },
   },
   defaultVariants: {

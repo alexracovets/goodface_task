@@ -1,18 +1,20 @@
 "use client";
 
-import type * as LabelPrimitive from "@radix-ui/react-label";
+import { cva } from "class-variance-authority";
 import { Slot } from "@radix-ui/react-slot";
 import * as React from "react";
+
 import {
-  Controller,
-  FormProvider,
-  useFormContext,
-  useFormState,
   type ControllerProps,
-  type FieldPath,
   type FieldValues,
+  useFormContext,
+  type FieldPath,
+  FormProvider,
+  useFormState,
+  Controller,
 } from "react-hook-form";
 
+import { FormItemType, FormLabelType } from "@types";
 import { AtomFormLabel } from "@atoms";
 import { cn } from "@utils";
 
@@ -73,31 +75,58 @@ const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 );
 
-function FormItem({ className, ...props }: React.ComponentProps<"div">) {
+export const formItemVariants = cva("", {
+  variants: {
+    variant: {
+      default: "flex flex-col gap-[4px] w-full",
+    },
+  },
+  defaultVariants: {
+    variant: "default",
+  },
+});
+
+function FormItem({ className, variant = "default", ...props }: FormItemType) {
   const id = React.useId();
 
   return (
     <FormItemContext.Provider value={{ id }}>
       <div
         data-slot="form-item"
-        className={cn("grid gap-2", className)}
+        className={cn(formItemVariants({ variant, className }))}
         {...props}
       />
     </FormItemContext.Provider>
   );
 }
 
+export const variantsFormLabel = cva(
+  "data-[error=true]:text-destructive cursor-pointer w-fit",
+  {
+    variants: {
+      variant: {
+        default:
+          "text-[14px] text-grey-800 font-[700] leading-[20px] tracking-[0.2px]",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
+
 function FormLabel({
+  variant = "default",
   className,
   ...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
+}: FormLabelType) {
   const { error, formItemId } = useFormField();
 
   return (
     <AtomFormLabel
       data-slot="form-label"
       data-error={!!error}
-      className={cn("data-[error=true]:text-destructive", className)}
+      className={cn(variantsFormLabel({ variant, className }))}
       htmlFor={formItemId}
       {...props}
     />
