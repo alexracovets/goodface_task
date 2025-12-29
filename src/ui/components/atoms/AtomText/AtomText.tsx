@@ -10,6 +10,7 @@ export const variantsAtomText = cva("", {
   variants: {
     variant: {
       default: "",
+      h4: "text-[24px] font-[500] leading-[32px]",
       logo: "text-[24px] font-[500] leading-[32px] text-grey-800",
       notification_count: cn("text-[12px] font-[600] text-base-white"),
       user_name: cn("text-[14px] font-[500] leading-[20px] text-grey-800"),
@@ -19,6 +20,11 @@ export const variantsAtomText = cva("", {
       navigation_section_title: cn(
         "text-[12px] font-[500] leading-[20px] text-grey-700 tracking-[0.7px] uppercase"
       ),
+      hero_description: cn("text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-500"),
+      form_part_title: cn("text-[14px] font-[700] leading-[20px] tracking-[0.2px] text-grey-800"),
+      form_part_description: cn("text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-500"),
+      table_data: cn("text-[14px] text-right font-[500] leading-[20px] tracking-[-0.2px] text-grey-700 py-[8px] px-[12px]"),
+      table_header: cn("text-[14px] text-right font-[500] leading-[20px] text-grey-500 py-[8px] px-[12px]"),
     },
   },
   defaultVariants: {

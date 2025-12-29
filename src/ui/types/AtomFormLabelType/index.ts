@@ -1,0 +1,1 @@
+export type { AtomFormLabelType } from "./AtomFormLabelType";

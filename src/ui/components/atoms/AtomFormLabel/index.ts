@@ -1,0 +1,1 @@
+export { AtomFormLabel, variantsAtomFormLabel } from "./AtomFormLabel";

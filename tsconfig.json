@@ -30,7 +30,8 @@
       "@templates": ["./src/ui/components/templates"],
       "@types": ["./src/ui/types"],
       "@hooks": ["./src/hooks"],
-      "@store": ["./src/store"]
+      "@store": ["./src/store"],
+      "@schemas": ["./src/ui/schemas"]
     }
   },
   "include": [

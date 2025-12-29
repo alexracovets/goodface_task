@@ -1,7 +1,17 @@
 "use client";
 
-import { Container } from "@atoms";
+import { AtomWrapper, Container } from "@atoms";
+import { PageHeroBlock, FormProxies } from "@molecules";
 
 export const DatacenterTemplate = () => {
-  return <Container>asd</Container>;
+  return (
+    <>
+      <Container>
+        <AtomWrapper variant="product_main_content">
+          <PageHeroBlock />
+          <FormProxies />
+        </AtomWrapper>
+      </Container>
+    </>
+  );
 };

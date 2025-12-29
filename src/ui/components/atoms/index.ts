@@ -1,3 +1,5 @@
+export { Form, FormItem, FormLabel, FormControl, FormDescription, FormMessage, FormField } from "./Form";
+export { AtomFormLabel, variantsAtomFormLabel } from "./AtomFormLabel";
 export { AtomWrapper, variantsAtomWrapper } from "./AtomWrapper";
 export { AtomButton, variantsAtomButton } from "./AtomButton";
 export { AtomImage, variantsAtomImage } from "./AtomImage";
@@ -32,3 +34,17 @@ export {
   AccordionItem,
   Accordion,
 } from "./Accordion";
+
+export {
+  TableHelperColumnText,
+  TableHeaderBlock,
+  TableCellBlock,
+  TableCaption,
+  TableFooter,
+  TableHeader,
+  TableBody,
+  TableHead,
+  TableCell,
+  TableRow,
+  Table,
+} from "./Table";

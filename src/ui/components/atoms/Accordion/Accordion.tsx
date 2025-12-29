@@ -3,7 +3,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react";
 
 import { cn } from "@utils";
-import { cva } from "class-variance-authority";
+import { cva, VariantProps } from "class-variance-authority";
 
 function Accordion({
   ...props
@@ -33,6 +33,10 @@ const variantsAccordionTrigger = cva(
           "text-[14px] text-grey-800 leading-[20px] font-[500] pl-[12px] pr-[8px] py-[4px]",
           "[&[data-state=open]]:text-primary-500 [&[data-state=open]]:bg-primary-50 rounded-[4px]"
         ),
+        discounts: cn(
+          "text-[14px] text-grey-800 leading-[20px] font-[500] pr-[8px] py-[4px] w-fit gap-x-[4px]",
+          "[&>svg]:rotate-90 [&[data-state=open]>svg]:rotate-270"
+        ),
       },
     },
     defaultVariants: {
@@ -40,12 +44,14 @@ const variantsAccordionTrigger = cva(
     },
   }
 );
+
 const variantsAccordionTriggerInner = cva(
   "flex items-center justify-between gap-x-[16px]",
   {
     variants: {
       variantInner: {
         default: "text-[14px] text-grey-800 leading-[20px] font-[500]",
+        discounts: "text-[14px] text-grey-800 leading-[20px] font-[500]",
       },
     },
   }
@@ -54,12 +60,12 @@ const variantsAccordionTriggerInner = cva(
 function AccordionTrigger({
   className,
   children,
-  variant,
-  variantInner,
+  variant = "default",
+  variantInner = "default",
   ...props
 }: React.ComponentProps<typeof AccordionPrimitive.Trigger> & {
-  variant?: "default";
-  variantInner?: "default";
+  variant?: VariantProps<typeof variantsAccordionTrigger>["variant"];
+  variantInner?: VariantProps<typeof variantsAccordionTriggerInner>["variantInner"];
 }) {
   return (
     <AccordionPrimitive.Header className="flex">

@@ -1,9 +1,11 @@
 export type { NavigationIconType } from "./NavigationIconType";
+export type { AtomFormLabelType } from "./AtomFormLabelType";
 export type { AtomWrapperType } from "./AtomWrapperType";
 export type { AtomButtonType } from "./AtomButtonType";
 export type { AtomImageType } from "./AtomImageType";
 export type { ContainerType } from "./ContainerType";
+export type { TableDataType } from "./TableDataType";
 export type { ChildrenType } from "./ChildrenType";
 export type { AtomLinkType } from "./AtomLinkType";
 export type { AtomTextType } from "./AtomTextType";
-export type { AtomHRType } from "./AtomHRType";
+export type { AtomHRType } from "./AtomHRType"; 
