@@ -1,11 +1,18 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { useCallback } from "react";
 
 import { BundleDiscounts, ProxiesCountPick } from "@molecules";
-import { Form, AtomText, AtomWrapper } from "@atoms";
+import {
+  Form,
+  AtomWrapper,
+  FormDescription,
+  FormElementRadio,
+  RadioGroupItem,
+  AtomFormLabel,
+} from "@atoms";
 
 import { SchemaFormProxies } from "@schemas";
 
@@ -14,11 +21,30 @@ export const FormProxies = () => {
     resolver: zodResolver(SchemaFormProxies),
     defaultValues: {
       count: 0,
-      period: 1,
+      period: "3",
       location: "us",
     },
   });
-  
+  const period = useWatch({ control: form.control, name: "period" });
+
+  const options = [
+    {
+      value: "1",
+      label: "1 month",
+      id: "0",
+    },
+    {
+      value: "3",
+      label: "3 months",
+      id: "1",
+    },
+    {
+      value: "12",
+      label: "12 months",
+      id: "2",
+    },
+  ];
+
   const onSubmit = useCallback(() => {
     console.log(form.getValues());
   }, [form]);
@@ -27,14 +53,32 @@ export const FormProxies = () => {
     <Form {...form}>
       <AtomWrapper variant="product_main_content" asChild>
         <form onSubmit={form.handleSubmit(onSubmit)}>
-          <AtomWrapper variant="form_part_info">
-            <AtomText variant="form_part_title">Select number of IPs</AtomText>
-            <AtomText variant="form_part_description">
-              Choose the perfect quantity of IPs for your needs effortlessly
-            </AtomText>
-          </AtomWrapper>
+          <FormDescription
+            title="Select number of IPs"
+            description="Choose the perfect quantity of IPs for your needs effortlessly"
+            formDescriptionId="proxies"
+          />
           <BundleDiscounts />
           <ProxiesCountPick name="count" min={0} max={1000} breaker={100} />
+          <FormElementRadio
+            name="period"
+            label="Subscription Cycle"
+            wrapperVariant="default"
+          >
+            {options.map((option) => {
+              return (
+                <AtomFormLabel
+                  key={option.id}
+                  htmlFor={option.value}
+                  variant="radio_label"
+                  data-active={period === option.value}
+                >
+                  <RadioGroupItem value={option.value} id={option.value} />
+                  {option.label}
+                </AtomFormLabel>
+              );
+            })}
+          </FormElementRadio>
         </form>
       </AtomWrapper>
     </Form>

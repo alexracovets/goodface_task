@@ -14,8 +14,9 @@ import {
   Controller,
 } from "react-hook-form";
 
+import { AtomFormLabel, AtomWrapper, AtomText } from "@atoms";
+
 import { FormItemType, FormLabelType } from "@types";
-import { AtomFormLabel } from "@atoms";
 import { cn } from "@utils";
 
 const Form = FormProvider;
@@ -78,7 +79,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 export const formItemVariants = cva("", {
   variants: {
     variant: {
-      default: "flex flex-col gap-[4px] w-full",
+      default: "flex flex-col gap-[8px] w-full",
     },
   },
   defaultVariants: {
@@ -152,16 +153,26 @@ function FormControl({ ...props }: React.ComponentProps<typeof Slot>) {
   );
 }
 
-function FormDescription({ className, ...props }: React.ComponentProps<"p">) {
-  const { formDescriptionId } = useFormField();
+interface FormDescriptionProps {
+  title: string;
+  description: string;
+  formDescriptionId: string;
+}
 
+function FormDescription({
+  title,
+  description,
+  formDescriptionId,
+}: FormDescriptionProps) {
   return (
-    <p
+    <AtomWrapper
+      variant="form_part_info"
       data-slot="form-description"
       id={formDescriptionId}
-      className={cn("text-muted-foreground text-sm", className)}
-      {...props}
-    />
+    >
+      <AtomText variant="form_part_title">{title}</AtomText>
+      <AtomText variant="form_part_description">{description}</AtomText>
+    </AtomWrapper>
   );
 }
 

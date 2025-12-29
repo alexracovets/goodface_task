@@ -31,16 +31,16 @@ export const ProxiesCountPick = ({
 
   return (
     <>
-      <FormField
-        control={form.control}
-        name={name}
-        render={({ field }) => {
-          const value = Array.isArray(field.value)
-            ? field.value
-            : [field.value ?? 0];
-          return (
-            <>
-              {isSlider ? (
+      <>
+        {isSlider ? (
+          <FormField
+            control={form.control}
+            name={name}
+            render={({ field }) => {
+              const value = Array.isArray(field.value)
+                ? field.value
+                : [field.value ?? 0];
+              return (
                 <AtomWrapper className="flex flex-col gap-[12px]">
                   <Slider
                     value={value}
@@ -49,6 +49,7 @@ export const ProxiesCountPick = ({
                     onValueChange={(newValue: number[]) => {
                       field.onChange(newValue[0]);
                     }}
+                    name={name}
                   />
                   <AtomWrapper variant="slider_separator">
                     {Array.from(
@@ -69,21 +70,22 @@ export const ProxiesCountPick = ({
                     )}
                   </AtomWrapper>
                 </AtomWrapper>
-              ) : (
-                <FormElement
-                  name={name}
-                  label="Custom quantity"
-                  placeholder="0"
-                  wrapperVariant="default"
-                  type="number"
-                  max={max}
-                  error={!!form.formState.errors[name]}
-                />
-              )}
-            </>
-          );
-        }}
-      />
+              );
+            }}
+          />
+        ) : (
+          <FormElement
+            name={name}
+            label="Custom quantity"
+            placeholder="0"
+            wrapperVariant="default"
+            type="number"
+            max={max}
+            error={!!form.formState.errors[name]}
+          />
+        )}
+      </>
+
       <AtomButton
         variant="destructive"
         type="button"
