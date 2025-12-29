@@ -11,7 +11,7 @@ export const variantsAtomLink = cva("whitespace-nowrap inline-block w-fit", {
     variant: {
       default: "",
       navigation_additional_item:
-        "text-[13px] text-grey-800 leading-[16px] font-[400] pl-[12px] pr-[8px] py-[4px] bg-transparent border-none",
+        "text-[13px] text-grey-800 leading-[16px] font-[400] px-[4px] py-[4px] bg-transparent border-none w-full",
     },
   },
   defaultVariants: {

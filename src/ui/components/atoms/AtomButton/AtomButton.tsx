@@ -21,7 +21,7 @@ export const variantsAtomButton = cva(
         secondary:
           "text-grey-800 text-[13px] font-[700] leading-[20px] flex items-center justify-center gap-x-[4px] px-[12px] py-[4px] w-full mb-[8px]",
         navigation_item: cn(
-          "flex justify-start items-center w-full gap-x-[16px] pl-[12px] pr-[8px] py-[4px] bg-transparent border-none",
+          "flex justify-between items-center w-full py-[4px] bg-transparent border-none",
           "text-[14px] text-grey-800 leading-[20px] font-[500]",
           "[&[data-active='true']]:text-primary-500 [&[data-active='true']]:bg-primary-50  hover:text-primary-500 hover:bg-primary-50",
           "transition-all duration-300 ease-in"

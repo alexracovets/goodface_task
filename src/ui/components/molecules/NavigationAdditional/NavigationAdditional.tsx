@@ -7,9 +7,7 @@ import {
   AccordionTrigger,
   AccordionItem,
   AtomWrapper,
-  AtomButton,
   Accordion,
-  AtomText,
   AtomLink,
 } from "@atoms";
 

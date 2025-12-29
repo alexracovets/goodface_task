@@ -14,3 +14,4 @@ export { PlusIcon } from "./PlusIcon";
 export { CoinIcon } from "./CoinIcon";
 export { EyeIcon } from "./EyeIcon";
 export { KeyIcon } from "./KeyIcon";
+export { LiveLog } from "./LiveLog";

@@ -3,13 +3,18 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 
-import { AtomButton, AtomLink, AtomText, AtomWrapper } from "@atoms";
+import { AtomButton, AtomLink, AtomText, AtomWrapper, LiveLog } from "@atoms";
 
 import { NavigationIconType } from "@types";
 
 interface NavigationSectionProps {
   title: string;
-  content: { name: string; icon: React.ReactNode; link: string }[];
+  content: {
+    name: string;
+    icon: React.ReactNode;
+    link: string;
+    live?: boolean;
+  }[];
 }
 
 export const NavigationSection = ({
@@ -29,18 +34,21 @@ export const NavigationSection = ({
             asChild
           >
             <AtomLink href={item.link}>
-              {React.isValidElement(item.icon)
-                ? React.cloneElement(
-                    item.icon as React.ReactElement<NavigationIconType>,
-                    {
-                      className: `w-[20px] h-[20px] ${
-                        (item.icon.props as { className?: string })
-                          ?.className || ""
-                      }`.trim(),
-                    }
-                  )
-                : item.icon}
-              {item.name}
+              <AtomWrapper variant="navigation_item_content">
+                {React.isValidElement(item.icon)
+                  ? React.cloneElement(
+                      item.icon as React.ReactElement<NavigationIconType>,
+                      {
+                        className: `w-[20px] h-[20px] ${
+                          (item.icon.props as { className?: string })
+                            ?.className || ""
+                        }`.trim(),
+                      }
+                    )
+                  : item.icon}
+                {item.name}
+              </AtomWrapper>
+              {item.live && <LiveLog className="w-[20px] h-[20px]" />}
             </AtomLink>
           </AtomButton>
         ))}

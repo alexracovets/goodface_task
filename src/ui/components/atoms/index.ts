@@ -22,6 +22,7 @@ export {
   BellIcon,
   PlusIcon,
   EyeIcon,
+  LiveLog,
   KeyIcon,
 } from "./Icons";
 
