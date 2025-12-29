@@ -15,6 +15,7 @@ export { Container, variantsContainer } from "./Container";
 export { AtomText, variantsAtomText } from "./AtomText";
 export { AtomLink, variantsAtomLink } from "./AtomLink";
 export { AtomHR, variantsAtomHR } from "./AtomHR";
+export { Slider } from "./Slider";
 
 export {
   DotsVerticalIcon,

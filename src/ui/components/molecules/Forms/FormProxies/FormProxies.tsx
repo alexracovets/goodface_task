@@ -4,8 +4,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useCallback } from "react";
 
+import { BundleDiscounts, ProxiesCountPick } from "@molecules";
 import { Form, AtomText, AtomWrapper } from "@atoms";
-import { BundleDiscounts } from "@molecules";
 
 import { SchemaFormProxies } from "@schemas";
 
@@ -18,7 +18,7 @@ export const FormProxies = () => {
       location: "us",
     },
   });
-
+  console.log(form.watch("count"));
   const onSubmit = useCallback(() => {
     console.log(form.getValues());
   }, [form]);
@@ -34,6 +34,7 @@ export const FormProxies = () => {
             </AtomText>
           </AtomWrapper>
           <BundleDiscounts />
+          <ProxiesCountPick name="count" min={0} max={1000} breaker={100} />
         </form>
       </AtomWrapper>
     </Form>
