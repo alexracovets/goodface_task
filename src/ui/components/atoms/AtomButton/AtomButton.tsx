@@ -33,6 +33,7 @@ export const variantsAtomButton = cva(
         discount: cn(
           "text-[13px] font-[700] leading-[20px] px-[12px] py-[4px]"
         ),
+        burger_button: "flex items-center justify-center border-none",
       },
     },
   }

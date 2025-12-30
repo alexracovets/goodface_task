@@ -30,7 +30,7 @@ export const variantsAtomWrapper = cva("", {
       ),
       product_sidebar: cn("w-[360px] order-1", "max-md:order-1 max-md:w-full"),
       logo_nav_part: cn(
-        "flex items-center justify-between px-[16px] py-[8px]",
+        "flex items-center justify-between px-[16px] py-[8px] relative z-[60] bg-base-white",
         "max-sm:p-[16px]"
       ),
       notification_count: cn(
@@ -71,6 +71,7 @@ export const variantsAtomWrapper = cva("", {
       aside_list_block: "flex flex-col gap-y-[8px] w-full",
       aside_form_item: "flex items-center justify-between gap-x-[8px] w-full",
       check_discount_form: "flex gap-x-[8px] w-full items-start",
+      burger_wrapper: "flex items-center justify-center gap-x-[24px]",
     },
   },
   defaultVariants: {

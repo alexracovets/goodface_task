@@ -24,6 +24,7 @@ export {
   ReceiptIcon,
   BasketIcon,
   HelpCircle,
+  BurgerIcon,
   SelectAll,
   UsersIcon,
   DragIcon,
@@ -84,3 +85,4 @@ export { FormElementSelect } from "./FormsElements";
 export { FormElement } from "./FormsElements";
 export { CustomScroll } from "./CustomScroll";
 export { InputSelect } from "./InputSelect";
+export { VisuallyHidden } from "./VisuallyHidden";

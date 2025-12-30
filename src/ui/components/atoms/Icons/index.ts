@@ -7,6 +7,7 @@ export { ChevronRight } from "./ChevronRight";
 export { СircleCheck } from "./СircleСheck";
 export { ReceiptIcon } from "./ReceiptIcon";
 export { MonitorIcon } from "./MonitorIcon";
+export { BurgerIcon } from "./BurgerIcon";
 export { HelpCircle } from "./HelpCircle";
 export { BasketIcon } from "./BasketIcon";
 export { UsersIcon } from "./UsersIcon";

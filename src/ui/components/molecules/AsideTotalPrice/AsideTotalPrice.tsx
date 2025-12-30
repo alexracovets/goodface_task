@@ -13,7 +13,7 @@ export const AsideTotalPrice = () => {
     : 0;
 
   const finalPrice = totalPrice - subDiscount;
-  
+
   return (
     <AtomWrapper variant="aside_list_block" asChild>
       <ul>
