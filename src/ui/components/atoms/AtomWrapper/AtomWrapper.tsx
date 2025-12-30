@@ -57,8 +57,8 @@ export const variantsAtomWrapper = cva("", {
       slider_separator_item:
         "flex justify-center items-center first:justify-start last:justify-end",
       select_dropdown_item: cn(
-        "text-[14px] xl:text-[1.4rem] text-grey-800 font-[500] leading-[20px] xl:leading-[2rem] tracking-[-0.2px] xl:tracking-[-0.02rem] flex items-center justify-between gap-x-[8px] xl:gap-x-[0.8rem] bg-base-white w-full px-[12px] xl:px-[1.2rem] py-[8px] xl:py-[0.8rem] cursor-pointer",
-        "hover:bg-grey-100 hover:scale-[1.005]",
+        "text-[14px] xl:text-[1.4rem] text-grey-800 font-[500] leading-[20px] xl:leading-[2rem] tracking-[-0.2px] xl:tracking-[-0.02rem] flex items-center justify-between gap-x-[8px] xl:gap-x-[0.8rem] bg-base-white w-full px-[12px] xl:px-[1.2rem] py-[8px] xl:py-[0.8rem] cursor-pointer outline-none!",
+        "hover:bg-grey-100 hover:scale-[1.005] aria-selected:bg-grey-100 aria-selected:scale-[1.005] focus:bg-grey-100 focus:scale-[1.005]",
         "transition-all duration-300 ease-in-out"
       ),
       dropdown_item_inner: "flex items-center gap-x-[8px] xl:gap-x-[0.8rem]",

@@ -7,7 +7,6 @@ export { AtomImage, variantsAtomImage } from "./AtomImage";
 export { AtomInput, variantsAtomInput } from "./AtomInput";
 export { AtomText, variantsAtomText } from "./AtomText";
 export { AtomLink, variantsAtomLink } from "./AtomLink";
-export { FormElementRadio } from "./FormsElements";
 export { AtomHR, variantsAtomHR } from "./AtomHR";
 
 export { Slider } from "./Slider";
@@ -82,7 +81,5 @@ export {
   Sheet,
 } from "./Sheet";
 
-export { FormElementSelect } from "./FormsElements";
-export { FormElement } from "./FormsElements";
-export { CustomScroll } from "./CustomScroll";
-export { InputSelect } from "./InputSelect"; 
+export { FormElementRadio, FormElementSelect, FormElement } from "./FormsElements";
+export { CustomScroll } from "./CustomScroll"; 

@@ -1,189 +1,145 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
-import {
-  useRef,
-  useState,
-  PointerEventHandler,
-  useCallback,
-  useEffect,
-} from "react";
+import { useState } from "react";
+import * as Select from "@radix-ui/react-select";
+import { ChevronDownIcon } from "@atoms";
 
 import {
-  FormControl,
-  FormMessage,
-  FormField,
-  FormLabel,
-  FormItem,
-  AtomButton,
-  InputSelect,
-  AtomWrapper,
-  AtomImage,
-  ChevronDownIcon,
+    FormControl,
+    FormMessage,
+    AtomWrapper,
+    AtomButton,
+    FormField,
+    FormLabel,
+    AtomImage,
+    FormItem,
 } from "@atoms";
 
 import { FormItemType, LocationType } from "@types";
 import { cn } from "@utils";
 
 interface FormElementSelectProps {
-  name: string;
-  label: string;
-  placeholder: string;
-  wrapperVariant?: FormItemType["variant"];
-  className?: string;
-  options: LocationType[];
+    name: string;
+    label: string;
+    placeholder: string;
+    wrapperVariant?: FormItemType["variant"];
+    className?: string;
+    options: LocationType[];
 }
 
 export const FormElementSelect = ({
-  name,
-  label,
-  wrapperVariant,
-  className,
-  placeholder,
-  options,
+    name,
+    label,
+    wrapperVariant,
+    className,
+    placeholder,
+    options,
 }: FormElementSelectProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [isFocused, setIsFocused] = useState(false);
-  const ignoreBlurRef = useRef(false);
-  const inputRef = useRef<HTMLButtonElement | null>(null);
-  const wrapperRef = useRef<HTMLDivElement | null>(null);
-  const [isMouseEnter, setIsMouseEnter] = useState(false);
-  const form = useFormContext();
+    const form = useFormContext();
+    const [open, setOpen] = useState(false);
 
-  const handleDropdownPointerDown: PointerEventHandler<HTMLDivElement> = () => {
-    ignoreBlurRef.current = true;
-    if (typeof window !== "undefined") {
-      window.setTimeout(() => {
-        ignoreBlurRef.current = false;
-      }, 0);
-    }
-  };
+    return (
+        <FormField
+            control={form.control}
+            name={name}
+            render={({ field }) => {
+                const selectedOption = field.value
+                    ? options.find((opt) => opt.value === field.value.value) || field.value
+                    : null;
 
-  const selectItem = (option: LocationType) => {
-    form.setValue(name, option);
-    setIsOpen(false);
-  };
+                return (
+                    <FormItem
+                        variant={wrapperVariant}
+                        className={className}
+                    >
+                        <FormMessage />
+                        <FormLabel asChild className="cursor-auto">
+                            <p>{label}</p>
+                        </FormLabel>
+                        <FormControl>
+                            <Select.Root
+                                value={selectedOption?.value}
+                                onValueChange={(value) => {
+                                    const option = options.find((opt) => opt.value === value);
+                                    if (option) {
+                                        field.onChange(option);
+                                    }
+                                }}
+                                onOpenChange={setOpen}
+                                disabled={options.length === 0}
+                            >
+                                <Select.Trigger aria-label={label} asChild >
+                                    <AtomButton type="button" variant="select"  >
+                                        <Select.Value placeholder={placeholder} asChild>
+                                            <div className="flex items-center gap-x-[8px] xl:gap-x-[0.8rem]">
+                                                {selectedOption?.image ? (
+                                                    <AtomImage
+                                                        src={selectedOption.image}
+                                                        alt={selectedOption.label || ""}
+                                                        variant="location"
+                                                    />
+                                                ) : null}
+                                                <span>
+                                                    {selectedOption?.label || placeholder}
+                                                </span>
+                                            </div>
+                                        </Select.Value>
+                                        <ChevronDownIcon
+                                            className={cn(
+                                                "text-grey-700 w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] transition-all duration-300 ease-in-out",
+                                                open && "rotate-180"
+                                            )}
+                                        />
+                                    </AtomButton>
+                                </Select.Trigger>
 
-  const handleClick = () => {
-    setIsOpen((prev) => !prev);
-  };
-
-  const handleButtonBlur = useCallback(
-    (event: React.FocusEvent<HTMLButtonElement>) => {
-      if (ignoreBlurRef.current) {
-        event.preventDefault();
-        if (typeof window !== "undefined") {
-          window.requestAnimationFrame(() => {
-            inputRef.current?.focus();
-          });
-        }
-        return;
-      }
-
-      setIsFocused(false);
-    },
-    [ignoreBlurRef]
-  );
-
-  const handleButtonFocus = () => {
-    setIsFocused(true);
-  };
-
-  const autoOpenChecker = useCallback(() => {
-    if (!isMouseEnter && !isFocused) {
-      setIsOpen(options.length > 0 && isFocused);
-    }
-  }, [options, isFocused, isMouseEnter]);
-
-  useEffect(() => {
-    if (typeof window === "undefined") {
-      return;
-    }
-
-    window.setTimeout(() => {
-      autoOpenChecker();
-    }, 0);
-  }, [autoOpenChecker]);
-
-  useEffect(() => {
-    if (typeof document === "undefined") {
-      return;
-    }
-
-    const handleOutsideClick = (event: MouseEvent | TouchEvent) => {
-      const target = event.target as Node | null;
-
-      if (
-        wrapperRef.current &&
-        target &&
-        !wrapperRef.current.contains(target)
-      ) {
-        setIsMouseEnter(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleOutsideClick);
-    document.addEventListener("touchstart", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-      document.removeEventListener("touchstart", handleOutsideClick);
-    };
-  }, []);
-
-  return (
-    <FormField
-      control={form.control}
-      name={name}
-      render={({ field }) => {
-        return (
-          <FormItem
-            ref={wrapperRef}
-            variant={wrapperVariant}
-            className={className}
-            onMouseEnter={() => setIsMouseEnter(true)}
-          >
-            <FormMessage />
-            <FormLabel asChild className="cursor-auto">
-              <p>{label}</p>
-            </FormLabel>
-            <FormControl>
-              <AtomWrapper>
-                <AtomButton
-                  ref={inputRef}
-                  type="button"
-                  variant="select"
-                  onClick={handleClick}
-                  onFocus={handleButtonFocus}
-                  onBlur={handleButtonBlur}
-                >
-                  <AtomWrapper variant="dropdown_item_inner">
-                    <AtomImage
-                      src={field.value.image}
-                      alt={field.value.label}
-                      variant="location"
-                    />
-                    {field.value.label || placeholder}
-                  </AtomWrapper>
-                  <ChevronDownIcon
-                    className={cn(
-                      "text-grey-700 w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] transition-all duration-300 ease-in-out",
-                      isOpen && "rotate-180"
-                    )}
-                  />
-                </AtomButton>
-                <InputSelect
-                  onDropdownPointerDown={handleDropdownPointerDown}
-                  options={options as LocationType[]}
-                  isOpen={isOpen}
-                  selectItem={selectItem}
-                  selectedItem={field.value}
-                />
-              </AtomWrapper>
-            </FormControl>
-          </FormItem>
-        );
-      }}
-    />
-  );
+                                <Select.Portal>
+                                    <Select.Content
+                                        className={cn(
+                                            "z-50 max-h-[300px] overflow-hidden",
+                                            "bg-base-white border border-grey-300 rounded-[4px] xl:rounded-[0.4rem]",
+                                            "shadow-lg"
+                                        )}
+                                        style={{ minWidth: "var(--radix-select-trigger-width)" }}
+                                        position="popper"
+                                        sideOffset={4}
+                                    >
+                                        <Select.Viewport className="p-[4px] xl:p-[0.4rem]">
+                                            {options.map((option) => (
+                                                <Select.Item
+                                                    key={option.value}
+                                                    value={option.value}
+                                                    asChild
+                                                >
+                                                    <AtomWrapper
+                                                        aria-selected={option === selectedOption}
+                                                        variant="select_dropdown_item"
+                                                        className={cn(option.available === 0 && "grayscale")}
+                                                    >
+                                                        <AtomWrapper variant="dropdown_item_inner">
+                                                            <AtomImage
+                                                                src={option.image}
+                                                                alt={option.label}
+                                                                variant="location"
+                                                            />
+                                                            {option.label}
+                                                        </AtomWrapper>
+                                                        <AtomWrapper variant="dropdown_item_additional">
+                                                            <p>{option.available} available</p>
+                                                        </AtomWrapper>
+                                                    </AtomWrapper>
+                                                </Select.Item>
+                                            ))}
+                                        </Select.Viewport>
+                                    </Select.Content>
+                                </Select.Portal>
+                            </Select.Root>
+                        </FormControl>
+                    </FormItem>
+                );
+            }}
+        />
+    );
 };
+
