@@ -3,21 +3,15 @@
 import { PointerEventHandler } from "react";
 
 import { AtomImage, AtomWrapper } from "@atoms";
+import { LocationType } from "@types";
 import { cn } from "@utils";
 
-interface Option {
-  label: string;
-  value: string;
-  image: string;
-  available: number;
-}
-
-interface NovaPoshtaSelectType {
+interface InputSelectType {
   isOpen: boolean;
-  options: Option[];
+  options: LocationType[];
   onDropdownPointerDown?: PointerEventHandler<HTMLDivElement>;
-  selectItem: (option: Option) => void;
-  selectedItem: Option;
+  selectItem: (option: LocationType) => void;
+  selectedItem: LocationType;
 }
 
 export const InputSelect = ({
@@ -26,7 +20,7 @@ export const InputSelect = ({
   selectedItem,
   onDropdownPointerDown,
   isOpen,
-}: NovaPoshtaSelectType) => {
+}: InputSelectType) => {
   return (
     <>
       {isOpen && (

@@ -1,0 +1,1 @@
+export { FormCheckDiscount } from "./FormCheckDiscount";

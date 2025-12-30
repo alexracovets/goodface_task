@@ -1,5 +1,6 @@
 "use client";
 
+import { VariantProps } from "class-variance-authority";
 import { useFormContext } from "react-hook-form";
 
 import type React from "react";
@@ -11,15 +12,18 @@ import {
   FormLabel,
   AtomInput,
   FormMessage,
+  variantsAtomInput,
 } from "@atoms";
 
 import { FormItemType } from "@types";
+import { cn } from "@utils";
 
 interface FormElementProps {
   name: string;
-  label: string;
+  label?: string;
   placeholder: string;
   wrapperVariant?: FormItemType["variant"];
+  variant?: VariantProps<typeof variantsAtomInput>["variant"];
   className?: string;
   type?: "number" | "text" | "email" | "tel";
   error?: boolean;
@@ -33,6 +37,7 @@ export const FormElement = ({
   label,
   placeholder,
   wrapperVariant,
+  variant,
   className,
   type = "text",
   error,
@@ -63,6 +68,8 @@ export const FormElement = ({
           let letNewValue = "";
           if (max !== undefined && type === "number") {
             letNewValue = validationMaxNumber(value, max);
+          } else {
+            letNewValue = value;
           }
 
           field.onChange({
@@ -75,11 +82,16 @@ export const FormElement = ({
         };
 
         return (
-          <FormItem variant={wrapperVariant} className={className}>
+          <FormItem
+            variant={wrapperVariant}
+            className={cn(className, error ? "pb-[14px]" : "pb-[0px]")}
+          >
             <FormMessage />
-            <FormLabel htmlFor={name} {...props}>
-              {label}
-            </FormLabel>
+            {label && (
+              <FormLabel htmlFor={name} {...props}>
+                {label}
+              </FormLabel>
+            )}
             <FormControl>
               <AtomInput
                 autoComplete="off"
@@ -94,6 +106,7 @@ export const FormElement = ({
                 error={error}
                 disabled={disabled}
                 onChange={handleChange}
+                variant={variant}
               />
             </FormControl>
           </FormItem>

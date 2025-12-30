@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useWatch } from "react-hook-form";
-import { useCallback } from "react";
+import { useEffect } from "react";
 
 import { Form, AtomWrapper, FormDescription } from "@atoms";
 import {
@@ -13,34 +13,69 @@ import {
 } from "@molecules";
 
 import { SchemaFormProxies } from "@schemas";
+import { useProxyFormData } from "@store";
+import { LocationType, PeriodType } from "@types";
 
 export const FormProxies = () => {
+  const {
+    count,
+    period,
+    location,
+    periodOptions,
+    setCount,
+    setPeriod,
+    setLocation,
+  } = useProxyFormData();
+
   const form = useForm({
     resolver: zodResolver(SchemaFormProxies),
     defaultValues: {
-      count: 0,
-      period: "3",
-      location: {
-        value: "uk",
-        label: "United Kingdom",
-        available: 777,
-        image: "/png/flags/uk.png",
-      },
+      count: count,
+      period: period,
+      location: location,
     },
+  });
+
+  const formCount = useWatch({
+    control: form.control,
+    name: "count",
+  });
+  const formPeriod = useWatch({
+    control: form.control,
+    name: "period",
+  });
+  const formLocation = useWatch({
+    control: form.control,
+    name: "location",
   });
   const availableProxies = useWatch({
     control: form.control,
     name: "location.available",
   });
 
-  const onSubmit = useCallback(() => {
-    console.log(form.getValues());
-  }, [form]);
+  useEffect(() => {
+    setCount(formCount);
+  }, [formCount, setCount]);
+
+  useEffect(() => {
+    if (formPeriod) {
+      const period = periodOptions.find(
+        (option) => option.value === formPeriod
+      );
+      setPeriod(period?.value || "");
+    }
+  }, [formPeriod, periodOptions, setPeriod]);
+
+  useEffect(() => {
+    if (formLocation) {
+      setLocation(formLocation as LocationType);
+    }
+  }, [formLocation, setLocation]);
 
   return (
     <Form {...form}>
       <AtomWrapper variant="product_main_content" asChild>
-        <form onSubmit={form.handleSubmit(onSubmit)}>
+        <form>
           <FormDescription
             title="Select number of IPs"
             description="Choose the perfect quantity of IPs for your needs effortlessly"
@@ -57,7 +92,10 @@ export const FormProxies = () => {
             }
             breaker={100}
           />
-          <SubscriptionCycle />
+          <SubscriptionCycle
+            name="period"
+            options={periodOptions as PeriodType[]}
+          />
           <LocationSelect
             name="location"
             label="Select location"

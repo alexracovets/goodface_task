@@ -9,32 +9,23 @@ import {
   AtomText,
 } from "@atoms";
 
-export const SubscriptionCycle = () => {
-  const form = useFormContext();
-  const period = useWatch({ control: form.control, name: "period" });
+import { PeriodType } from "@types";
 
-  const options = [
-    {
-      value: "1",
-      label: "1 month",
-      id: "0",
-    },
-    {
-      value: "3",
-      label: "3 months",
-      id: "1",
-    },
-    {
-      value: "12",
-      label: "12 months",
-      discount: 20,
-      id: "2",
-    },
-  ];
+interface SubscriptionCycleProps {
+  name: string;
+  options: PeriodType[];
+}
+
+export const SubscriptionCycle = ({
+  name,
+  options,
+}: SubscriptionCycleProps) => {
+  const form = useFormContext();
+  const period = useWatch({ control: form.control, name: name });
 
   return (
     <FormElementRadio
-      name="period"
+      name={name}
       label="Subscription Cycle"
       wrapperVariant="default"
     >

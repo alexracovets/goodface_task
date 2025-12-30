@@ -22,15 +22,8 @@ import {
   ChevronDownIcon,
 } from "@atoms";
 
-import { FormItemType } from "@types";
-import { cn } from "@/src/utils";
-
-interface Option {
-  label: string;
-  value: string;
-  image: string;
-  available: number;
-}
+import { FormItemType, LocationType } from "@types";
+import { cn } from "@utils";
 
 interface FormElementSelectProps {
   name: string;
@@ -38,7 +31,7 @@ interface FormElementSelectProps {
   placeholder: string;
   wrapperVariant?: FormItemType["variant"];
   className?: string;
-  options: Option[];
+  options: LocationType[];
 }
 
 export const FormElementSelect = ({
@@ -64,7 +57,7 @@ export const FormElementSelect = ({
     }, 0);
   };
 
-  const selectItem = (option: Option) => {
+  const selectItem = (option: LocationType) => {
     form.setValue(name, option);
     setIsOpen(false);
   };
@@ -169,7 +162,7 @@ export const FormElementSelect = ({
                 </AtomButton>
                 <InputSelect
                   onDropdownPointerDown={handleDropdownPointerDown}
-                  options={options as Option[]}
+                  options={options as LocationType[]}
                   isOpen={isOpen}
                   selectItem={selectItem}
                   selectedItem={field.value}

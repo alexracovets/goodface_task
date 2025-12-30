@@ -47,6 +47,22 @@ export const variantsAtomText = cva("", {
       additional_content_list_item: cn(
         "text-[14px] text-grey-600 font-[500] leading-[20px] tracking-[-0.2px]"
       ),
+      aside_title: cn("text-[20px] font-[500] leading-[28px] text-grey-800"),
+      aside_list_block_title: cn(
+        "text-[16px] font-[500] leading-[24px] text-grey-800"
+      ),
+      aside_form_title: cn(
+        "text-[14px] font-[800] leading-[20px] tracking-[-0.2px] text-grey-600"
+      ),
+      aside_form_total: cn(
+        "text-[14px] font-[500] leading-[20px] text-grey-700"
+      ),
+      aside_form_value: cn(
+        "text-[14px] font-[500] leading-[20px] tracking-[-0.2px] text-grey-800"
+      ),
+      aside_form_total_value: cn(
+        "text-[24px] font-[500] leading-[32px] text-grey-800"
+      ),
     },
   },
   defaultVariants: {

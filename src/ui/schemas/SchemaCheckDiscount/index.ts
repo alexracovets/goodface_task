@@ -1,0 +1,1 @@
+export { SchemaCheckDiscount } from "./SchemaCheckDiscount";

@@ -6,10 +6,10 @@ import {
   TableOptions,
 } from "@tanstack/react-table";
 
-import { TableData } from "@molecules";
 import { columns } from "./columns";
-import { useMemo } from "react";
-import { TableDataType } from "@/src/ui/types";
+
+import { TableData } from "@molecules";
+import { TableDataType } from "@types";
 
 const data = [
   {

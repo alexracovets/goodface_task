@@ -11,4 +11,6 @@ export type { ChildrenType } from "./ChildrenType";
 export type { AtomLinkType } from "./AtomLinkType";
 export type { AtomTextType } from "./AtomTextType";
 export type { FormItemType } from "./FormItemType";
-export type { AtomHRType } from "./AtomHRType"; 
+export type { LocationType } from "./LocationType";
+export type { AtomHRType } from "./AtomHRType";
+export type { PeriodType } from "./PeriodType";

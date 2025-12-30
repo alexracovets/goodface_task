@@ -2,7 +2,7 @@
 
 import { FormElementSelect } from "@atoms";
 
-import { FormItemType } from "@types";
+import { FormItemType, LocationType } from "@types";
 
 const locations = [
   {
@@ -62,7 +62,7 @@ export const LocationSelect = ({
       label={label}
       placeholder={placeholder}
       wrapperVariant={wrapperVariant}
-      options={locations}
+      options={locations as LocationType[]}
     />
   );
 };

@@ -13,6 +13,9 @@ export const variantsAtomInput = cva(
         default: cn(
           "text-[16px] font-[500] leading-[24px] tracking-[-0.2px] px-[12px] py-[8px]"
         ),
+        discount_code: cn(
+          "text-[14px] font-[500] leading-[20px] tracking-[-0.2px] pl-[12px] pr-[8px] py-[4px] border border-grey-300 rounded-[4px]"
+        ),
       },
     },
     defaultVariants: {

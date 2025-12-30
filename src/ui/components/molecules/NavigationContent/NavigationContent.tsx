@@ -5,15 +5,17 @@ import {
   NavigationSections,
   NewProxies,
 } from "@molecules";
-import { AtomWrapper, AtomHR } from "@atoms";
+import { AtomWrapper, AtomHR, CustomScroll } from "@atoms";
 
 export const NavigationContent = () => {
   return (
-    <AtomWrapper variant="navigation_content">
-      <NewProxies />
-      <NavigationSections />
-      <AtomHR />
-      <NavigationAdditional />
-    </AtomWrapper>
+    <CustomScroll className="h-full">
+      <AtomWrapper variant="navigation_content">
+        <NewProxies />
+        <NavigationSections />
+        <AtomHR />
+        <NavigationAdditional />
+      </AtomWrapper>
+    </CustomScroll>
   );
 };

@@ -1,5 +1,6 @@
 "use client";
 
+import { motion, AnimatePresence } from "framer-motion";
 import { cva } from "class-variance-authority";
 import { Slot } from "@radix-ui/react-slot";
 import * as React from "react";
@@ -76,7 +77,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 );
 
-export const formItemVariants = cva("", {
+export const formItemVariants = cva("relative ease-in-out duration-300", {
   variants: {
     variant: {
       default: "flex flex-col gap-[8px] w-full",
@@ -182,19 +183,36 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
   const { error, formMessageId } = useFormField();
   const body = error ? String(error?.message ?? "") : props.children;
 
-  if (!body) {
-    return null;
-  }
-
   return (
-    <p
-      data-slot="form-message"
-      id={formMessageId}
-      className={cn("text-destructive text-sm", className)}
-      {...props}
-    >
-      {body}
-    </p>
+    <div className="absolute bottom-0 left-0 w-full translate-y-[50%]">
+      <AnimatePresence mode="wait">
+        {body && (
+          <motion.div
+            initial={{ opacity: 0, height: 0, y: 10 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: 10 }}
+            transition={{
+              duration: 0.3,
+              ease: "easeInOut",
+              height: { duration: 0.2 },
+            }}
+            className="flex items-center w-full rounded-[4px]"
+          >
+            <p
+              data-slot="form-message"
+              id={formMessageId}
+              className={cn(
+                "text-[14px] text-red-500 leading-[20px] tracking-[-0.2px] w-full",
+                className
+              )}
+              {...props}
+            >
+              {body}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
   );
 }
 

@@ -1,0 +1,1 @@
+export { AsideTotalPrice } from "./AsideTotalPrice";

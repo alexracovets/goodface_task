@@ -17,7 +17,7 @@ export const PlanesIncludes = () => {
   const midpoint = Math.ceil(list.length / 2);
   const firstHalf = list.slice(0, midpoint);
   const secondHalf = list.slice(midpoint);
-  console.log(firstHalf, secondHalf);
+
   return (
     <AtomWrapper variant="additional_content">
       <AtomText variant="additional_title" asChild>

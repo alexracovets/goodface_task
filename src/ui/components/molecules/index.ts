@@ -1,16 +1,19 @@
 export { NavigationAdditional } from "./NavigationAdditional";
+export { TableData, TableBundleDiscounts } from "./Tables";
 export { NavigationSections } from "./NavigationSections";
+export { FormCheckDiscount, FormProxies } from "./Forms";
 export { NavigationContent } from "./NavigationContent";
 export { SubscriptionCycle } from "./SubscriptionCycle";
 export { NavigationHeader } from "./NavigationHeader";
 export { NavigationFooter } from "./NavigationFooter";
 export { ProxiesCountPick } from "./ProxiesCountPick";
+export { AsideProxyValues } from "./AsideProxyValues";
+export { AsideTotalPrice } from "./AsideTotalPrice";
 export { BundleDiscounts } from "./BundleDiscounts";
 export { LocationSelect } from "./LocationSelect";
 export { PlanesIncludes } from "./PlanesIncludes";
 export { PageHeroBlock } from "./PageHeroBlock";
+export { PromoDiscount } from "./PromoDiscount";
 export { Notification } from "./Notification";
 export { NewProxies } from "./NewProxies";
-export { FormProxies } from "./Forms";
-
-export { TableData, TableBundleDiscounts } from "./Tables";
+export { AsideList } from "./AsideList";

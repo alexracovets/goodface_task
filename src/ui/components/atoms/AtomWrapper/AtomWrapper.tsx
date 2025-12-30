@@ -13,7 +13,7 @@ export const variantsAtomWrapper = cva("", {
       goodface_wrapper: "grid grid-cols-[auto_1fr] h-screen",
       navigation_aplication:
         "w-[280px] bg-base-white border border-grey-200 grid grid-rows-[auto_1fr_auto] h-screen",
-      product_wrapper: "grid grid-cols-[1fr_auto] w-full gap-x-[48px]",
+      product_wrapper: "grid grid-cols-[1fr_auto] w-full gap-x-[48px] min-h-0",
       product_main: "w-full flex flex-col py-[24px] px-[48px] gap-y-[24px]",
       product_sidebar: "w-[360px]",
       logo_nav_part: "flex items-center justify-between px-[16px] py-[8px]",
@@ -21,8 +21,7 @@ export const variantsAtomWrapper = cva("", {
         "absolute top-[4px] right-[-4px]",
         "w-[20px] h-[16px] flex items-center justify-center bg-primary-400 rounded-[20px] outline outline-[2px] outline-base-white"
       ),
-      navigation_content:
-        "flex flex-col w-full p-[16px] gap-y-[16px] overflow-y-auto min-h-0",
+      navigation_content: "flex flex-col w-full p-[16px] gap-y-[16px]",
       navigation_section: "flex flex-col w-full gap-y-[8px]",
       navigation_section_content: "flex flex-col w-full gap-y-[4px]",
       navigation_additional: "flex flex-col w-full gap-y-[4px]",
@@ -49,6 +48,9 @@ export const variantsAtomWrapper = cva("", {
       additional_content_lists: "grid grid-cols-2 gap-x-[16px] w-full",
       additional_content_list: "flex flex-col gap-y-[8px] w-full",
       additional_content_list_item: "flex items-center gap-x-[8px] w-full",
+      aside_list_block: "flex flex-col gap-y-[8px] w-full",
+      aside_form_item: "flex items-center justify-between gap-x-[8px] w-full",
+      check_discount_form: "flex gap-x-[8px] w-full items-start",
     },
   },
   defaultVariants: {
