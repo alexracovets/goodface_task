@@ -33,7 +33,7 @@ export const PlanesIncludes = () => {
                 asChild
               >
                 <li>
-                  <СircleCheck className="w-[20px] h-[20px]" />
+                  <СircleCheck className="w-[20px] min-w-[20px] h-[20px] min-h-[20px]" />
                   <AtomText variant="additional_content_list_item">
                     {item}
                   </AtomText>
@@ -51,7 +51,7 @@ export const PlanesIncludes = () => {
                 asChild
               >
                 <li>
-                  <СircleCheck className="w-[20px] h-[20px]" />
+                  <СircleCheck className="w-[20px] min-w-[20px] h-[20px] min-h-[20px]" />
                   <AtomText variant="additional_content_list_item">
                     {item}
                   </AtomText>

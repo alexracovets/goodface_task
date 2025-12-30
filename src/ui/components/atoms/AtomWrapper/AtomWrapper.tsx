@@ -10,13 +10,29 @@ export const variantsAtomWrapper = cva("", {
   variants: {
     variant: {
       default: "w-full",
-      goodface_wrapper: "grid grid-cols-[auto_1fr] h-screen",
-      navigation_aplication:
+      goodface_wrapper: cn(
+        "grid grid-cols-[auto_1fr] h-screen",
+        "max-sm:flex max-sm:flex-col max-sm:h-auto"
+      ),
+      navigation_aplication: cn(
         "w-[280px] bg-base-white border border-grey-200 grid grid-rows-[auto_1fr_auto] h-screen",
-      product_wrapper: "grid grid-cols-[1fr_auto] w-full gap-x-[48px] min-h-0",
-      product_main: "w-full flex flex-col py-[24px] px-[48px] gap-y-[24px]",
-      product_sidebar: "w-[360px]",
-      logo_nav_part: "flex items-center justify-between px-[16px] py-[8px]",
+        "max-sm:w-full max-sm:h-auto"
+      ),
+      product_wrapper: cn(
+        "grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] w-full gap-x-[48px] gap-y-[24px] min-h-0",
+        "max-short-desktop:gap-x-[16px]",
+        "max-md:flex max-md:flex-col"
+      ),
+      product_main: cn(
+        "w-full flex flex-col py-[24px] px-[48px] gap-y-[24px]",
+        "max-short-desktop:px-[16px]",
+        "max-sm:px-[16px]"
+      ),
+      product_sidebar: cn("w-[360px] order-1", "max-md:order-1 max-md:w-full"),
+      logo_nav_part: cn(
+        "flex items-center justify-between px-[16px] py-[8px]",
+        "max-sm:p-[16px]"
+      ),
       notification_count: cn(
         "absolute top-[4px] right-[-4px]",
         "w-[20px] h-[16px] flex items-center justify-center bg-primary-400 rounded-[20px] outline outline-[2px] outline-base-white"
@@ -45,8 +61,12 @@ export const variantsAtomWrapper = cva("", {
       dropdown_item_additional:
         "text-[12px] text-grey-500 font-[500] leading-[16px] tracking-[0.2px]",
       additional_content: "flex flex-col gap-y-[16px] w-full",
-      additional_content_lists: "grid grid-cols-2 gap-x-[16px] w-full",
-      additional_content_list: "flex flex-col gap-y-[8px] w-full",
+      additional_content_lists: cn(
+        "grid grid-cols-2 gap-x-[16px] w-full",
+        "max-[1030px]:grid-cols-[auto_auto]",
+        "max-sd:flex max-sd:flex-col max-sd:gap-y-[8px]"
+      ),
+      additional_content_list: "flex flex-col gap-y-[8px] w-fit",
       additional_content_list_item: "flex items-center gap-x-[8px] w-full",
       aside_list_block: "flex flex-col gap-y-[8px] w-full",
       aside_form_item: "flex items-center justify-between gap-x-[8px] w-full",

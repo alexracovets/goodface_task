@@ -13,8 +13,6 @@ import {
   FormElement,
 } from "@atoms";
 
-import { cn } from "@utils";
-
 interface ProxiesCountPickProps {
   name: string;
   min: number;
@@ -53,25 +51,38 @@ export const ProxiesCountPick = ({
                     }}
                     name={name}
                   />
-                  <AtomWrapper variant="slider_separator">
+                  <AtomWrapper variant="slider_separator" className="relative w-full h-[20px]">
                     {Array.from(
                       {
                         length: Math.floor((max - min) / breaker) + 1,
                       },
-                      (_, index) => (
-                        <AtomWrapper
-                          key={index}
-                          style={{
-                            width: `${100 / (Math.floor((max - min) / breaker) + 1)}%`,
-                          }}
-                          variant="slider_separator_item"
-                          className={cn(max === 0 && "last:justify-start!")}
-                        >
-                          <AtomText variant="slider_separator_item">
-                            {min + index * breaker}
-                          </AtomText>
-                        </AtomWrapper>
-                      )
+                      (_, index) => {
+                        const value = min + index * breaker;
+                        // Radix UI Slider позиціонує thumb за формулою:
+                        // left = (value - min) / (max - min) * (trackWidth - thumbWidth) + thumbWidth / 2
+                        // Де thumbWidth = 22px
+                        // Спрощена формула для відсотків: position% від (100% - 22px) + 11px
+                        // Або: position% - position% * 22px / 100% + 11px
+                        const position = ((value - min) / (max - min)) * 100;
+                        // Компенсація: від position% віднімаємо пропорційну частину відступу thumb і додаємо половину ширини thumb
+                        const thumbOffset = (position * 22) / 100;
+                        return (
+                          <AtomWrapper
+                            key={index}
+                            style={{
+                              position: "absolute",
+                              left: `calc(${position}% - ${thumbOffset}px + 11px)`,
+                              transform: "translateX(-50%)",
+                            }}
+                            variant="slider_separator_item"
+                            className="!justify-center"
+                          >
+                            <AtomText variant="slider_separator_item">
+                              {value}
+                            </AtomText>
+                          </AtomWrapper>
+                        );
+                      }
                     )}
                   </AtomWrapper>
                 </AtomWrapper>

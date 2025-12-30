@@ -69,6 +69,17 @@ export {
   Form,
 } from "./Form";
 
+export {
+  SheetDescription,
+  SheetTrigger,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetClose,
+  Sheet,
+} from "./Sheet";
+
 export { FormElementSelect } from "./FormsElements";
 export { FormElement } from "./FormsElements";
 export { CustomScroll } from "./CustomScroll";

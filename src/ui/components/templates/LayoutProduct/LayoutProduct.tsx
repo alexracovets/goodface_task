@@ -12,9 +12,7 @@ export const LayoutProduct = ({ children }: ChildrenType) => {
         <main className="w-full flex-1 flex flex-col min-h-0">
           <HeaderProduct />
           <AtomWrapper variant="product_wrapper">
-            <AtomWrapper variant="product_main_content" asChild>
-              {children}
-            </AtomWrapper>
+            {children}
             <OrderSummaryAside />
           </AtomWrapper>
           <footer className="hidden"></footer>

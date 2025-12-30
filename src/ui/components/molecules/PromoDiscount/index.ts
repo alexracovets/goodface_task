@@ -1,1 +1,0 @@
-export { PromoDiscount } from "./PromoDiscount";

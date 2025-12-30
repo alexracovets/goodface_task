@@ -13,7 +13,6 @@ export { BundleDiscounts } from "./BundleDiscounts";
 export { LocationSelect } from "./LocationSelect";
 export { PlanesIncludes } from "./PlanesIncludes";
 export { PageHeroBlock } from "./PageHeroBlock";
-export { PromoDiscount } from "./PromoDiscount";
 export { Notification } from "./Notification";
 export { NewProxies } from "./NewProxies";
 export { AsideList } from "./AsideList";
