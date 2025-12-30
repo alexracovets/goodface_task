@@ -1,7 +1,7 @@
 "use client";
 
 import { AtomWrapper, Container } from "@atoms";
-import { PageHeroBlock, FormProxies } from "@molecules";
+import { PageHeroBlock, FormProxies, PlanesIncludes } from "@molecules";
 
 export const DatacenterTemplate = () => {
   return (
@@ -15,7 +15,9 @@ export const DatacenterTemplate = () => {
         </section>
       </Container>
       <Container asChild>
-        <section></section>
+        <section>
+          <PlanesIncludes />
+        </section>
       </Container>
     </AtomWrapper>
   );

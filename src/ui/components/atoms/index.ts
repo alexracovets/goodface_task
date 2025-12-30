@@ -19,6 +19,7 @@ export {
   ClipboardList,
   UserPlusIcon,
   ChevronRight,
+  СircleCheck,
   MonitorIcon,
   ReceiptIcon,
   BasketIcon,

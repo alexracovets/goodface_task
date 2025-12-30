@@ -4,6 +4,7 @@ export { ChevronDownIcon } from "./ChevronDownIcon";
 export { ClipboardList } from "./ClipboardList";
 export { UserPlusIcon } from "./UserPlusIcon";
 export { ChevronRight } from "./ChevronRight";
+export { СircleCheck } from "./СircleСheck";
 export { ReceiptIcon } from "./ReceiptIcon";
 export { MonitorIcon } from "./MonitorIcon";
 export { HelpCircle } from "./HelpCircle";
@@ -18,3 +19,4 @@ export { EditIcon } from "./EditIcon";
 export { EyeIcon } from "./EyeIcon";
 export { KeyIcon } from "./KeyIcon";
 export { LiveLog } from "./LiveLog";
+ 

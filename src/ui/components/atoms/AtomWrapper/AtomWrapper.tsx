@@ -45,6 +45,10 @@ export const variantsAtomWrapper = cva("", {
       dropdown_item_inner: "flex items-center gap-x-[8px]",
       dropdown_item_additional:
         "text-[12px] text-grey-500 font-[500] leading-[16px] tracking-[0.2px]",
+      additional_content: "flex flex-col gap-y-[16px] w-full",
+      additional_content_lists: "grid grid-cols-2 gap-x-[16px] w-full",
+      additional_content_list: "flex flex-col gap-y-[8px] w-full",
+      additional_content_list_item: "flex items-center gap-x-[8px] w-full",
     },
   },
   defaultVariants: {

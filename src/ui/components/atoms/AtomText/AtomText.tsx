@@ -41,6 +41,12 @@ export const variantsAtomText = cva("", {
       discount: cn(
         "text-[12px] text-green-800 font-[500] leading-[16px] tracking-[0.2px] bg-green-50 px-[5px] py-[1px] rounded-[4px] border border-green-300"
       ),
+      additional_title: cn(
+        "text-[18px] text-grey-800 font-[500] leading-[24px]"
+      ),
+      additional_content_list_item: cn(
+        "text-[14px] text-grey-600 font-[500] leading-[20px] tracking-[-0.2px]"
+      ),
     },
   },
   defaultVariants: {
