@@ -9,8 +9,10 @@ import { cn } from "@utils";
 export const variantsContainer = cva("", {
   variants: {
     variant: {
-      default:
+      default: cn(
         "container mx-auto p-[24px] bg-base-white border-[1px] border-grey-200 rounded-[8px]",
+        "max-md:p-[16px]"
+      ),
     },
   },
   defaultVariants: {

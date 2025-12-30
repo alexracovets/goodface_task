@@ -20,6 +20,10 @@ export const CustomScroll = ({ children, className }: CustomScrollProps) => {
   const [key, setKey] = useState(0);
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     const handleResize = () => {
       if (scrollRef.current) {
         const instance = scrollRef.current.osInstance();
@@ -42,11 +46,7 @@ export const CustomScroll = ({ children, className }: CustomScrollProps) => {
         scrollbars: {
           theme: "os-theme-custom",
           clickScroll: false,
-        },
-        overflow: {
-          x: "hidden",
-          y: "scroll",
-        },
+        }, 
       }}
       className={className}
     >

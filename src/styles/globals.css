@@ -43,6 +43,7 @@
   --color-green-900: #0e5327;
   --color-red-500: #eb392d;
 
+  --breakpoint-xl: 1920px;
   --breakpoint-short-desktop: 1400px;
   --breakpoint-md: 1240px;
   --breakpoint-sd: 930px;

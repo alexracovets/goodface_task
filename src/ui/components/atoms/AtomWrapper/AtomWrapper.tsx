@@ -19,16 +19,20 @@ export const variantsAtomWrapper = cva("", {
         "max-sm:w-full max-sm:h-auto"
       ),
       product_wrapper: cn(
-        "grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] w-full gap-x-[48px] gap-y-[24px] min-h-0",
+        "grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] w-full gap-x-[48px] gap-y-[16px] min-h-0",
         "max-short-desktop:gap-x-[16px]",
+        "md:gap-y-[24px]",
         "max-md:flex max-md:flex-col"
       ),
       product_main: cn(
         "w-full flex flex-col py-[24px] px-[48px] gap-y-[24px]",
         "max-short-desktop:px-[16px]",
-        "max-sm:px-[16px]"
+        "max-sm:px-[16px] max-md:gap-y-[16px]"
       ),
-      product_sidebar: cn("w-[360px] order-1", "max-md:order-1 max-md:w-full"),
+      product_sidebar: cn(
+        "w-[360px] flex flex-col gap-y-[16px] order-1",
+        "max-md:order-1 max-md:w-full"
+      ),
       logo_nav_part: cn(
         "flex items-center justify-between px-[16px] py-[8px] relative z-[60] bg-base-white",
         "max-sm:p-[16px]"
@@ -72,6 +76,7 @@ export const variantsAtomWrapper = cva("", {
       aside_form_item: "flex items-center justify-between gap-x-[8px] w-full",
       check_discount_form: "flex gap-x-[8px] w-full items-start",
       burger_wrapper: "flex items-center justify-center gap-x-[24px]",
+      credit_pay: "flex justify-center items-center",
     },
   },
   defaultVariants: {

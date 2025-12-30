@@ -1,11 +1,12 @@
 "use client";
 
-import { AtomHR, AtomText, AtomWrapper, Container } from "@atoms";
+import { AtomButton, AtomHR, AtomText, AtomWrapper, Container } from "@atoms";
 import {
   FormCheckDiscount,
   AsideProxyValues,
   AsideTotalPrice,
   AsideList,
+  CreditPay,
 } from "@molecules";
 
 export const OrderSummaryAside = () => {
@@ -24,6 +25,10 @@ export const OrderSummaryAside = () => {
             <AsideTotalPrice />
           </AtomWrapper>
         </Container>
+        <AtomButton variant="primary" type="button">
+          Continue to checkout
+        </AtomButton>
+        <CreditPay />
       </aside>
     </AtomWrapper>
   );

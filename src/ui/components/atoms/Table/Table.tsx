@@ -3,14 +3,17 @@
 import * as React from "react";
 
 import { cn } from "@utils";
+import { CustomScroll } from "@atoms";
 
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div
       data-slot="table-container"
-      className="border border-gray-200 rounded-[8px] overflow-hidden"
+      className="border border-gray-200 rounded-[8px] w-full overflow-hidden"
     >
-      <table data-slot="table" className={cn(className)} {...props} />
+      <CustomScroll className="w-full">
+        <table data-slot="table" className={cn("min-w-full", className)} {...props} />
+      </CustomScroll>
     </div>
   );
 }

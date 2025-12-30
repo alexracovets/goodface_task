@@ -13,6 +13,7 @@ export const variantsAtomImage = cva("block overflow-hidden select-none", {
       hero: "w-[56px] min-w-[56px] h-[56px] min-h-[56px]",
       location:
         "w-[20px] min-w-[20px] h-[20px] min-h-[20px] rounded-[4px] overflow-hidden",
+      payment: "w-[40px] min-w-[40px] h-[24px] min-h-[24px]",
     },
   },
 });

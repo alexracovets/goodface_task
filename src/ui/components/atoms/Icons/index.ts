@@ -1,6 +1,7 @@
+export { LayoutDashboardIcon } from "./LayoutDashboardIcon";
 export { DotsVerticalIcon } from "./DotsVerticalIcon";
-export { ChevronLeftIcon } from "./ChevronLeftIcon";
 export { ChevronDownIcon } from "./ChevronDownIcon";
+export { ChevronLeftIcon } from "./ChevronLeftIcon";
 export { ClipboardList } from "./ClipboardList";
 export { UserPlusIcon } from "./UserPlusIcon";
 export { ChevronRight } from "./ChevronRight";

@@ -16,3 +16,4 @@ export { PageHeroBlock } from "./PageHeroBlock";
 export { Notification } from "./Notification";
 export { NewProxies } from "./NewProxies";
 export { AsideList } from "./AsideList";
+export { CreditPay } from "./CreditPay";

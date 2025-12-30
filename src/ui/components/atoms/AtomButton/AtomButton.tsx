@@ -12,6 +12,8 @@ export const variantsAtomButton = cva(
     variants: {
       variant: {
         default: "",
+        primary:
+          "text-[16px] font-[700] leading-[24px] text-base-white py-[8px] px-[12px] bg-primary-500 rounded-[4px] border-none",
         back: cn(
           "flex justify-start items-center gap-x-[4px] text-[13px] font-[700] text-grey-800 leading-[20px] px-[12px] py-[4px]"
         ),

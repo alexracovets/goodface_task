@@ -58,7 +58,7 @@ export const useProxyFormData = create<ProxyFormDataStoreType>()(
     location: {
       value: "uk",
       label: "United Kingdom",
-      available: 777,
+      available: 1000,
       image: "/png/flags/uk.png",
     },
     pricePerIp: 0,

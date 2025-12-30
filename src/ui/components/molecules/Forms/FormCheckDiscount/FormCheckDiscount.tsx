@@ -2,7 +2,6 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 import { Form, AtomWrapper, FormElement, AtomButton } from "@atoms";
 
@@ -18,8 +17,10 @@ export const FormCheckDiscount = () => {
 
   const isSubmitting = form.formState.isSubmitting;
 
-  const onSubmit = (data: z.infer<typeof SchemaCheckDiscount>) => {
-    console.log(data);
+  const onSubmit = () => {
+    form.setError("discountCode", {
+      message: "API not exist",
+    });
   };
 
   return (

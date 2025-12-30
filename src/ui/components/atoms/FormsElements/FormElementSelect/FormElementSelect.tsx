@@ -52,9 +52,11 @@ export const FormElementSelect = ({
 
   const handleDropdownPointerDown: PointerEventHandler<HTMLDivElement> = () => {
     ignoreBlurRef.current = true;
-    window.setTimeout(() => {
-      ignoreBlurRef.current = false;
-    }, 0);
+    if (typeof window !== "undefined") {
+      window.setTimeout(() => {
+        ignoreBlurRef.current = false;
+      }, 0);
+    }
   };
 
   const selectItem = (option: LocationType) => {
@@ -70,9 +72,11 @@ export const FormElementSelect = ({
     (event: React.FocusEvent<HTMLButtonElement>) => {
       if (ignoreBlurRef.current) {
         event.preventDefault();
-        window.requestAnimationFrame(() => {
-          inputRef.current?.focus();
-        });
+        if (typeof window !== "undefined") {
+          window.requestAnimationFrame(() => {
+            inputRef.current?.focus();
+          });
+        }
         return;
       }
 
@@ -92,12 +96,20 @@ export const FormElementSelect = ({
   }, [options, isFocused, isMouseEnter]);
 
   useEffect(() => {
+    if (typeof window === "undefined") {
+      return;
+    }
+
     window.setTimeout(() => {
       autoOpenChecker();
     }, 0);
   }, [autoOpenChecker]);
 
   useEffect(() => {
+    if (typeof document === "undefined") {
+      return;
+    }
+
     const handleOutsideClick = (event: MouseEvent | TouchEvent) => {
       const target = event.target as Node | null;
 

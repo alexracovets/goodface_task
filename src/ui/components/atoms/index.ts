@@ -13,6 +13,7 @@ export { AtomHR, variantsAtomHR } from "./AtomHR";
 export { Slider } from "./Slider";
 
 export {
+  LayoutDashboardIcon,
   DotsVerticalIcon,
   ChevronLeftIcon,
   ChevronDownIcon,
@@ -84,5 +85,4 @@ export {
 export { FormElementSelect } from "./FormsElements";
 export { FormElement } from "./FormsElements";
 export { CustomScroll } from "./CustomScroll";
-export { InputSelect } from "./InputSelect";
-export { VisuallyHidden } from "./VisuallyHidden";
+export { InputSelect } from "./InputSelect"; 
