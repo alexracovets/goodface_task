@@ -26,7 +26,7 @@ export const InputSelect = ({
       {isOpen && (
         <AtomWrapper
           onPointerDownCapture={onDropdownPointerDown}
-          className="flex flex-col w-full py-[4px] border border-grey-300 rounded-[4px]"
+          className="flex flex-col w-full py-[4px] xl:py-[0.4rem] border border-grey-300 rounded-[4px] xl:rounded-[0.4rem]"
           asChild
         >
           <ul>

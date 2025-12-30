@@ -120,7 +120,7 @@ export const NavigationSections = () => {
                         ? React.cloneElement(
                             item.icon as React.ReactElement<NavigationIconType>,
                             {
-                              className: `w-[20px] h-[20px] ${
+                              className: `w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] ${
                                 (item.icon.props as { className?: string })
                                   ?.className || ""
                               }`.trim(),
@@ -129,7 +129,7 @@ export const NavigationSections = () => {
                         : item.icon}
                       {item.name}
                     </AtomWrapper>
-                    {item.live && <LiveLog className="w-[20px] h-[20px]" />}
+                    {item.live && <LiveLog className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem]" />}
                   </AtomLink>
                 </AtomButton>
               ))}

@@ -80,7 +80,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 export const formItemVariants = cva("relative ease-in-out duration-300", {
   variants: {
     variant: {
-      default: "flex flex-col gap-[8px] w-full",
+      default: "flex flex-col gap-[8px] xl:gap-[0.8rem] w-full",
     },
   },
   defaultVariants: {
@@ -108,7 +108,7 @@ export const variantsFormLabel = cva(
     variants: {
       variant: {
         default:
-          "text-[14px] text-grey-800 font-[700] leading-[20px] tracking-[0.2px]",
+          "text-[14px] xl:text-[1.4rem] text-grey-800 font-[700] leading-[20px] xl:leading-[2rem] tracking-[0.2px] xl:tracking-[0.02rem]",
       },
     },
     defaultVariants: {
@@ -196,13 +196,13 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
               ease: "easeInOut",
               height: { duration: 0.2 },
             }}
-            className="flex items-center w-full rounded-[4px]"
+            className="flex items-center w-full rounded-[4px] xl:rounded-[0.4rem]"
           >
             <p
               data-slot="form-message"
               id={formMessageId}
               className={cn(
-                "text-[14px] text-red-500 leading-[20px] tracking-[-0.2px] w-full",
+                "text-[14px] xl:text-[1.4rem] text-red-500 leading-[20px] xl:leading-[2rem] tracking-[-0.2px] xl:tracking-[-0.02rem] w-full",
                 className
               )}
               {...props}

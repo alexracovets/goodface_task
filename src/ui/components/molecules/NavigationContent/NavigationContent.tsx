@@ -7,12 +7,14 @@ import {
   NavigationSections,
   NewProxies,
 } from "@molecules";
+
 import {
-  AtomWrapper,
-  AtomHR,
+  LayoutDashboardIcon,
   CustomScroll,
+  AtomWrapper,
   AtomButton,
   AtomLink,
+  AtomHR,
 } from "@atoms";
 
 export const NavigationContent = () => {
@@ -30,7 +32,7 @@ export const NavigationContent = () => {
           >
             <AtomLink href={"#"}>
               <AtomWrapper variant="navigation_item_content">
-                
+                <LayoutDashboardIcon />
                 Dashboard
               </AtomWrapper>
             </AtomLink>

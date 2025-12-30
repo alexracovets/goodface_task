@@ -25,16 +25,16 @@ function AccordionItem({
 }
 
 const variantsAccordionTrigger = cva(
-  "flex items-center justify-between gap-x-[16px] w-full transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-90",
+  "flex items-center justify-between gap-x-[16px] xl:gap-x-[1.6rem] w-full transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-90",
   {
     variants: {
       variant: {
         default: cn(
-          "text-[14px] text-grey-800 leading-[20px] font-[500] pl-[12px] pr-[8px] py-[4px]",
-          "[&[data-state=open]]:text-primary-500 [&[data-state=open]]:bg-primary-50 rounded-[4px]"
+          "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500] pl-[12px] xl:pl-[1.2rem] pr-[8px] xl:pr-[0.8rem] py-[4px] xl:py-[0.4rem]",
+          "[&[data-state=open]]:text-primary-500 [&[data-state=open]]:bg-primary-50 rounded-[4px] xl:rounded-[0.4rem]"
         ),
         discounts: cn(
-          "text-[14px] text-grey-800 leading-[20px] font-[500] pr-[8px] py-[4px] w-fit gap-x-[4px]",
+          "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500] pr-[8px] xl:pr-[0.8rem] py-[4px] xl:py-[0.4rem] w-fit gap-x-[4px] xl:gap-x-[0.4rem]",
           "[&>svg]:rotate-90 [&[data-state=open]>svg]:rotate-270"
         ),
       },
@@ -46,12 +46,12 @@ const variantsAccordionTrigger = cva(
 );
 
 const variantsAccordionTriggerInner = cva(
-  "flex items-center justify-between gap-x-[16px]",
+  "flex items-center justify-between gap-x-[16px] xl:gap-x-[1.6rem]",
   {
     variants: {
       variantInner: {
-        default: "text-[14px] text-grey-800 leading-[20px] font-[500]",
-        discounts: "text-[14px] text-grey-800 leading-[20px] font-[500]",
+        default: "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500]",
+        discounts: "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500]",
       },
     },
   }
@@ -79,7 +79,7 @@ function AccordionTrigger({
         <div className={variantsAccordionTriggerInner({ variantInner })}>
           {children}
         </div>
-        <ChevronRightIcon className="w-[20px] h-[20px] text-grey-600 translate-y-0.5 transition-transform duration-200" />
+        <ChevronRightIcon className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] text-grey-600 translate-y-0.5 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
@@ -96,7 +96,7 @@ function AccordionContent({
       className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden"
       {...props}
     >
-      <div className={cn("pt-[4px] pb-[12px]", className)}>{children}</div>
+      <div className={cn("pt-[4px] xl:pt-[0.4rem] pb-[12px] xl:pb-[1.2rem]", className)}>{children}</div>
     </AccordionPrimitive.Content>
   );
 }

@@ -46,7 +46,7 @@ export const NavigationAplication = () => {
               <NavigationHeader isInsideSheet={true} isModal={isOpen} />
               <SheetContent
                 side="left"
-                className="max-sm:w-full flex flex-col bg-base-white border-grey-200 top-[70px] h-[calc(100vh-70px)]"
+                className="max-sm:w-full flex flex-col bg-base-white border-grey-200 top-[70px] xl:top-[7rem] h-[calc(100vh-70px)] xl:h-[calc(100vh-7rem)]"
               >
                 <SheetTitle
                   className="absolute w-[1px] h-[1px] p-0 -m-[1px] overflow-hidden whitespace-nowrap border-0"

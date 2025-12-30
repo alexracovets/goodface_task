@@ -60,6 +60,18 @@
   border-radius: 4px;
 }
 
+@media (min-width: 1920px) {
+  html {
+    font-size: calc(100vw / 1920 * 10);
+  }
+
+  :focus-visible {
+    outline-width: 0.1rem;
+    outline-offset: 0rem;
+    border-radius: 0.4rem;
+  }
+}
+
 button,
 a {
   cursor: pointer;
@@ -76,6 +88,17 @@ a {
   --os-handle-border-width: 1px solid var(--color-white);
   --os-padding-right: 2px;
   --os-handle-right: 2px;
+}
+
+@media (min-width: 1920px) {
+  .os-theme-custom {
+    --os-size: 0.2rem;
+    --os-track-width: 0.2rem;
+    --os-handle-border-radius: 99.9rem;
+    --os-handle-border-width: 0.1rem solid var(--color-white);
+    --os-padding-right: 0.2rem;
+    --os-handle-right: 0.2rem;
+  }
 }
 
 .os-scrollbar-handle {

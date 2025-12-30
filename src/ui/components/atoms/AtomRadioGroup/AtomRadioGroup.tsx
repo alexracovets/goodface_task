@@ -24,7 +24,7 @@ function RadioGroupItem({
     <RadioGroupPrimitive.Item
       data-slot="radio-group-item"
       className={cn(
-        "group bg-grey-300 size-[16px] rounded-full border-none outline-none disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer",
+        "group bg-grey-300 size-[16px] xl:size-[1.6rem] rounded-full border-none outline-none disabled:cursor-not-allowed disabled:opacity-50 cursor-pointer",
         "data-[state=checked]:bg-primary-500",
         "ease-in-out duration-300",
         className
@@ -37,8 +37,8 @@ function RadioGroupItem({
       >
         <span
           className={cn(
-            "bg-base-white absolute top-1/2 left-1/2 size-[14px] -translate-x-1/2 -translate-y-1/2 rounded-full",
-            "group-data-[state=checked]:size-[6px]",
+            "bg-base-white absolute top-1/2 left-1/2 size-[14px] xl:size-[1.4rem] -translate-x-1/2 -translate-y-1/2 rounded-full",
+            "group-data-[state=checked]:size-[6px] xl:group-data-[state=checked]:size-[0.6rem]",
             "ease-in-out duration-300"
           )}
         />

@@ -167,7 +167,7 @@ export const FormElementSelect = ({
                   </AtomWrapper>
                   <ChevronDownIcon
                     className={cn(
-                      "text-grey-700 w-[20px] h-[20px] transition-all duration-300 ease-in-out",
+                      "text-grey-700 w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] transition-all duration-300 ease-in-out",
                       isOpen && "rotate-180"
                     )}
                   />

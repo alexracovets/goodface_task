@@ -8,7 +8,7 @@ export const HeaderProduct = () => {
       <nav>
         <AtomLink href="/" variant="default">
           <AtomButton variant="back">
-            <ChevronLeftIcon className="w-[16px] h-[16px]" />
+            <ChevronLeftIcon className="w-[16px] xl:w-[1.6rem] h-[16px] xl:h-[1.6rem]" />
             Back to all
           </AtomButton>
         </AtomLink>

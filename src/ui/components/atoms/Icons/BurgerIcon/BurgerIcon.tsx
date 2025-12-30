@@ -22,7 +22,7 @@ export const BurgerIcon = ({ className, active }: BurgerIconProps) => {
           d="M4 6l16 0"
           className={`transition-all duration-300 ${
             active
-              ? "translate-y-[6px] rotate-45 origin-center"
+              ? "translate-y-[6px] xl:translate-y-[0.6rem] rotate-45 origin-center"
               : "translate-y-0 rotate-0"
           }`}
           style={{
@@ -42,7 +42,7 @@ export const BurgerIcon = ({ className, active }: BurgerIconProps) => {
           d="M4 18l16 0"
           className={`transition-all duration-300 ${
             active
-              ? "-translate-y-[6px] -rotate-45 origin-center"
+              ? "-translate-y-[6px] xl:-translate-y-[0.6rem] -rotate-45 origin-center"
               : "translate-y-0 rotate-0"
           }`}
           style={{

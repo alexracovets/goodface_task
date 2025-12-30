@@ -41,7 +41,7 @@ export const ProxiesCountPick = ({
                 ? field.value
                 : [field.value ?? 0];
               return (
-                <AtomWrapper className="flex flex-col gap-[12px]">
+                <AtomWrapper className="flex flex-col gap-[12px] xl:gap-[1.2rem]">
                   <Slider
                     value={value}
                     min={min}
@@ -53,7 +53,7 @@ export const ProxiesCountPick = ({
                   />
                   <AtomWrapper
                     variant="slider_separator"
-                    className="relative w-full h-[20px]"
+                    className="relative w-full h-[20px] xl:h-[2rem]"
                   >
                     {Array.from(
                       {
@@ -106,7 +106,7 @@ export const ProxiesCountPick = ({
       >
         {isSlider ? (
           <>
-            <EditIcon className="w-[16px] h-[16px]" />
+            <EditIcon className="w-[16px] xl:w-[1.6rem] h-[16px] xl:h-[1.6rem]" />
             Enter a custom quantity
           </>
         ) : (

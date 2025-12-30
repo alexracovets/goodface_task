@@ -65,7 +65,7 @@ export const NavigationAdditional = () => {
                 ? React.cloneElement(
                     item.icon as React.ReactElement<NavigationIconType>,
                     {
-                      className: `w-[20px] h-[20px] ${
+                      className: `w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] ${
                         (item.icon.props as { className?: string })
                           ?.className || ""
                       }`.trim(),

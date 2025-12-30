@@ -84,7 +84,7 @@ export const FormElement = ({
         return (
           <FormItem
             variant={wrapperVariant}
-            className={cn(className, error ? "pb-[14px]" : "pb-[0px]")}
+            className={cn(className, error ? "pb-[14px] xl:pb-[1.4rem]" : "pb-[0px]")}
           >
             <FormMessage />
             {label && (

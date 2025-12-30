@@ -31,7 +31,7 @@ export const NavigationHeader = ({
           {isInsideSheet && (
             <SheetTrigger asChild>
               <AtomButton variant="burger_button" aria-label="Open menu">
-                <BurgerIcon className="w-[40px] h-[40px]" active={isModal} />
+                <BurgerIcon className="w-[40px] xl:w-[4rem] h-[40px] xl:h-[4rem]" active={isModal} />
               </AtomButton>
             </SheetTrigger>
           )}

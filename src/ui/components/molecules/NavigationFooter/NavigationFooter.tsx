@@ -4,13 +4,13 @@ import { AtomButton, AtomText, DotsVerticalIcon } from "@atoms";
 
 export const NavigationFooter = () => {
   return (
-    <div className="flex justify-between items-center gap-x-[8px] py-[12px] pr-[12px] pl-[16px] border-t border-grey-200">
+    <div className="flex justify-between items-center gap-x-[8px] xl:gap-x-[0.8rem] py-[12px] xl:py-[1.2rem] pr-[12px] xl:pr-[1.2rem] pl-[16px] xl:pl-[1.6rem] border-t border-grey-200">
       <div>
         <AtomText variant="user_name">Henry Smith</AtomText>
         <AtomText variant="user_email">henry.smith@gmail.com</AtomText>
       </div>
       <AtomButton variant="user_details">
-        <DotsVerticalIcon className="w-[20px] h-[20px]" />
+        <DotsVerticalIcon className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem]" />
       </AtomButton>
     </div>
   );

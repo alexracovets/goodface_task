@@ -8,7 +8,7 @@ export const Notification = () => {
   const [notificationCount] = useState(2);
   return (
     <AtomButton variant="notification">
-      <BellIcon className="w-[20px] h-[20px]" />
+      <BellIcon className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem]" />
       {notificationCount > 0 && (
         <AtomWrapper variant="notification_count">
           <AtomText variant="notification_count">{notificationCount}</AtomText>
