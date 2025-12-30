@@ -4,6 +4,7 @@
 @theme {
   --font-space-grotesk: var(--font-space-grotesk);
 
+  --color-live-log: rgb(0, 182, 122);
   --color-background: #fafafa;
   --color-base-white: #ffffff;
   --color-base-black: #000000;
@@ -27,7 +28,16 @@
   --color-grey-700: #384250;
   --color-grey-800: #1f2a37;
   --color-grey-900: #111927;
-  --color-live-log: rgb(0, 182, 122);
+  --color-green-50: #e9f9ef;
+  --color-green-100: #baedcd;
+  --color-green-200: #99e4b5;
+  --color-green-300: #6bd893;
+  --color-green-400: #4ed17e;
+  --color-green-500: #22c55e;
+  --color-green-600: #1fb356;
+  --color-green-700: #188c43;
+  --color-green-800: #136c34;
+  --color-green-900: #0e5327;
 }
 
 * {

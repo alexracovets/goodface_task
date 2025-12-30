@@ -1,6 +1,7 @@
 "use client";
 
 import { useFormContext } from "react-hook-form";
+import { useState } from "react";
 
 import {
   AtomButton,
@@ -11,7 +12,8 @@ import {
   EditIcon,
   FormElement,
 } from "@atoms";
-import { useState } from "react";
+
+import { cn } from "@utils";
 
 interface ProxiesCountPickProps {
   name: string;
@@ -53,7 +55,9 @@ export const ProxiesCountPick = ({
                   />
                   <AtomWrapper variant="slider_separator">
                     {Array.from(
-                      { length: Math.floor((max - min) / breaker) + 1 },
+                      {
+                        length: Math.floor((max - min) / breaker) + 1,
+                      },
                       (_, index) => (
                         <AtomWrapper
                           key={index}
@@ -61,6 +65,7 @@ export const ProxiesCountPick = ({
                             width: `${100 / (Math.floor((max - min) / breaker) + 1)}%`,
                           }}
                           variant="slider_separator_item"
+                          className={cn(max === 0 && "last:justify-start!")}
                         >
                           <AtomText variant="slider_separator_item">
                             {min + index * breaker}

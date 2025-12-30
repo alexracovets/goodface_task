@@ -15,6 +15,7 @@ export { Slider } from "./Slider";
 export {
   DotsVerticalIcon,
   ChevronLeftIcon,
+  ChevronDownIcon,
   ClipboardList,
   UserPlusIcon,
   ChevronRight,
@@ -67,4 +68,6 @@ export {
   Form,
 } from "./Form";
 
+export { FormElementSelect } from "./FormsElements";
 export { FormElement } from "./FormsElements";
+export { InputSelect } from "./InputSelect";

@@ -50,33 +50,34 @@ export const Slider = ({
           )}
         />
       </SliderPrimitive.Track>
-      {Array.from({ length: _values.length }, (_, index) => (
-        <SliderPrimitive.Thumb
-          data-slot="slider-thumb"
-          key={index}
-          className="flex justify-center items-center disabled:pointer-events-none disabled:opacity-50 border-[1px] border-primary-500 rounded-[4px] relative cursor-pointer"
-        >
-          <div className="absolute bottom-[calc(100%+12px)] left-[50%] translate-x-[-50%] px-[8px] py-[4px] bg-primary-500 text-white rounded-[4px] transition-all ease-in-out whitespace-nowrap">
-            {value + " IP"}
-          </div>
-          <div className="absolute bottom-[calc(100%)] left-[50%] translate-x-[-50%]">
-            <svg
-              width="18px"
-              height="12px"
-              viewBox="0 0 18 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid slice"
-            >
-              <path
-                d="M 12 6 C 12 9.314 14.686 12 18 12 L 0 12 C 3.314 12 6 9.314 6 6 C 6 2.703 3.34 0.027 0.051 0 L 18 0 C 14.7 0 12 2.88 12 6 Z"
-                fill="#5547EB"
-              ></path>
-            </svg>
-          </div>
-          <DragIcon className="w-[22px] h-[22px]" />
-        </SliderPrimitive.Thumb>
-      ))}
+      {max > 0 &&
+        Array.from({ length: _values.length }, (_, index) => (
+          <SliderPrimitive.Thumb
+            data-slot="slider-thumb"
+            key={index}
+            className="flex justify-center items-center disabled:pointer-events-none disabled:opacity-50 border-[1px] border-primary-500 rounded-[4px] relative cursor-pointer"
+          >
+            <div className="absolute bottom-[calc(100%+12px)] left-[50%] translate-x-[-50%] px-[8px] py-[4px] bg-primary-500 text-white rounded-[4px] transition-all ease-in-out whitespace-nowrap">
+              {value + " IP"}
+            </div>
+            <div className="absolute bottom-[calc(100%)] left-[50%] translate-x-[-50%]">
+              <svg
+                width="18px"
+                height="12px"
+                viewBox="0 0 18 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                preserveAspectRatio="xMidYMid slice"
+              >
+                <path
+                  d="M 12 6 C 12 9.314 14.686 12 18 12 L 0 12 C 3.314 12 6 9.314 6 6 C 6 2.703 3.34 0.027 0.051 0 L 18 0 C 14.7 0 12 2.88 12 6 Z"
+                  fill="#5547EB"
+                ></path>
+              </svg>
+            </div>
+            <DragIcon className="w-[22px] h-[22px]" />
+          </SliderPrimitive.Thumb>
+        ))}
     </SliderPrimitive.Root>
   );
 };

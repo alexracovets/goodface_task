@@ -170,7 +170,9 @@ function FormDescription({
       data-slot="form-description"
       id={formDescriptionId}
     >
-      <AtomText variant="form_part_title">{title}</AtomText>
+      <AtomText variant="form_part_title" asChild>
+        <h2>{title}</h2>
+      </AtomText>
       <AtomText variant="form_part_description">{description}</AtomText>
     </AtomWrapper>
   );

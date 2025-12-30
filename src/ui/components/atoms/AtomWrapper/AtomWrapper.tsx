@@ -37,6 +37,14 @@ export const variantsAtomWrapper = cva("", {
       slider_separator: "flex justify-between items-center",
       slider_separator_item:
         "flex justify-center items-center first:justify-start last:justify-end",
+      select_dropdown_item: cn(
+        "text-[14px] text-grey-800 font-[500] leading-[20px] tracking-[-0.2px] flex items-center justify-between gap-x-[8px] bg-base-white w-full px-[12px] py-[8px] cursor-pointer",
+        "hover:bg-grey-100 hover:scale-[1.005]",
+        "transition-all duration-300 ease-in-out"
+      ),
+      dropdown_item_inner: "flex items-center gap-x-[8px]",
+      dropdown_item_additional:
+        "text-[12px] text-grey-500 font-[500] leading-[16px] tracking-[0.2px]",
     },
   },
   defaultVariants: {

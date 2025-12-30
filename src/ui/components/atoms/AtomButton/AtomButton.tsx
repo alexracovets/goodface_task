@@ -28,6 +28,8 @@ export const variantsAtomButton = cva(
         ),
         destructive:
           "text-[14px] font-[700] leading-[20px] text-primary-500 flex items-center justify-center gap-x-[8px] bg-base-white w-fit px-[16px] py-[4px]",
+        select:
+          "text-[14px] text-grey-800 font-[500] leading-[20px] tracking-[-0.2px] flex items-center justify-between gap-x-[8px] bg-base-white w-full pl-[12px] pr-[12px] py-[10px]",
       },
     },
   }

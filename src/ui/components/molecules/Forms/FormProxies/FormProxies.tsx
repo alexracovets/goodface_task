@@ -4,15 +4,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, useWatch } from "react-hook-form";
 import { useCallback } from "react";
 
-import { BundleDiscounts, ProxiesCountPick } from "@molecules";
+import { Form, AtomWrapper, FormDescription } from "@atoms";
 import {
-  Form,
-  AtomWrapper,
-  FormDescription,
-  FormElementRadio,
-  RadioGroupItem,
-  AtomFormLabel,
-} from "@atoms";
+  SubscriptionCycle,
+  ProxiesCountPick,
+  BundleDiscounts,
+  LocationSelect,
+} from "@molecules";
 
 import { SchemaFormProxies } from "@schemas";
 
@@ -22,28 +20,18 @@ export const FormProxies = () => {
     defaultValues: {
       count: 0,
       period: "3",
-      location: "us",
+      location: {
+        value: "uk",
+        label: "United Kingdom",
+        available: 777,
+        image: "/png/flags/uk.png",
+      },
     },
   });
-  const period = useWatch({ control: form.control, name: "period" });
-
-  const options = [
-    {
-      value: "1",
-      label: "1 month",
-      id: "0",
-    },
-    {
-      value: "3",
-      label: "3 months",
-      id: "1",
-    },
-    {
-      value: "12",
-      label: "12 months",
-      id: "2",
-    },
-  ];
+  const availableProxies = useWatch({
+    control: form.control,
+    name: "location.available",
+  });
 
   const onSubmit = useCallback(() => {
     console.log(form.getValues());
@@ -59,26 +47,22 @@ export const FormProxies = () => {
             formDescriptionId="proxies"
           />
           <BundleDiscounts />
-          <ProxiesCountPick name="count" min={0} max={1000} breaker={100} />
-          <FormElementRadio
-            name="period"
-            label="Subscription Cycle"
-            wrapperVariant="default"
-          >
-            {options.map((option) => {
-              return (
-                <AtomFormLabel
-                  key={option.id}
-                  htmlFor={option.value}
-                  variant="radio_label"
-                  data-active={period === option.value}
-                >
-                  <RadioGroupItem value={option.value} id={option.value} />
-                  {option.label}
-                </AtomFormLabel>
-              );
-            })}
-          </FormElementRadio>
+          <ProxiesCountPick
+            name="count"
+            min={0}
+            max={
+              availableProxies && availableProxies >= 1000
+                ? 1000
+                : availableProxies || 0
+            }
+            breaker={100}
+          />
+          <SubscriptionCycle />
+          <LocationSelect
+            name="location"
+            label="Select location"
+            placeholder="Select location"
+          />
         </form>
       </AtomWrapper>
     </Form>

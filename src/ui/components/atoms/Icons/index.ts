@@ -1,5 +1,6 @@
 export { DotsVerticalIcon } from "./DotsVerticalIcon";
 export { ChevronLeftIcon } from "./ChevronLeftIcon";
+export { ChevronDownIcon } from "./ChevronDownIcon";
 export { ClipboardList } from "./ClipboardList";
 export { UserPlusIcon } from "./UserPlusIcon";
 export { ChevronRight } from "./ChevronRight";

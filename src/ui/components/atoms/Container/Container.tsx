@@ -1,6 +1,7 @@
 "use client";
 
 import { cva } from "class-variance-authority";
+import { Slot } from "@radix-ui/react-slot";
 
 import { ContainerType } from "@types";
 import { cn } from "@utils";
@@ -21,11 +22,16 @@ export const Container = ({
   children,
   variant = "default",
   className,
+  asChild,
   ...props
 }: ContainerType) => {
+  const Component = asChild ? Slot : "section";
   return (
-    <div className={cn(variantsContainer({ variant }), className)} {...props}>
+    <Component
+      className={cn(variantsContainer({ variant }), className)}
+      {...props}
+    >
       {children}
-    </div>
+    </Component>
   );
 };

@@ -38,6 +38,9 @@ export const variantsAtomText = cva("", {
       slider_separator_item: cn(
         "text-[14px] leading-[20px] tracking-[-0.2px] text-grey-500"
       ),
+      discount: cn(
+        "text-[12px] text-green-800 font-[500] leading-[16px] tracking-[0.2px] bg-green-50 px-[5px] py-[1px] rounded-[4px] border border-green-300"
+      ),
     },
   },
   defaultVariants: {

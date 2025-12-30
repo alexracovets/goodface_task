@@ -48,8 +48,9 @@ export const FormElementRadio = ({
                 onBlur={field.onBlur}
                 id={name}
                 name={name}
+                asChild
               >
-                {children}
+                <fieldset>{children}</fieldset>
               </RadioGroup>
             </FormControl>
           </FormItem>
