@@ -8,7 +8,8 @@ export { AtomInput, variantsAtomInput } from "./AtomInput";
 export { AtomText, variantsAtomText } from "./AtomText";
 export { AtomLink, variantsAtomLink } from "./AtomLink";
 export { AtomHR, variantsAtomHR } from "./AtomHR";
-
+export { CustomScroll } from "./CustomScroll";
+export { Loader } from "./Loader";
 export { Slider } from "./Slider";
 
 export {
@@ -86,4 +87,3 @@ export {
   FormElementSelect,
   FormElement,
 } from "./FormsElements";
-export { CustomScroll } from "./CustomScroll";
