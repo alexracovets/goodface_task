@@ -59,6 +59,5 @@ export const RadioLabelSelected: Story = {
     variant: "radio_label",
     htmlFor: "radio-id",
     children: "Selected radio option",
-    "data-active": true,
   },
 };
