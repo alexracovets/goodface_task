@@ -1,36 +1,160 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Goodface Test Task - Frontend Middle+
 
-## Getting Started
+Тестове завдання для оцінки навичок верстки на Next.js та архітектурного мислення.
 
-First, run the development server:
+## 📊 Витрачений час
+
+**15 годин**
+
+## 📋 Опис проєкту
+
+Проєкт являє собою Next.js 16 застосунок з App Router адаптивної верстки з використанням компонентного підходу та архітектури Atomic Design(для архітектури).
+
+## 🛠 Технології та інструменти
+
+### Основні технології
+
+- **Next.js 16.1.1 / React 19.2.3**
+- **TypeScript 5**
+- **TailwindCSS 4**
+- **Zustand 5.0.9**
+- **React Hook Form 7.69.0**
+- **Zod 4.2.1**
+- **shadcn З елементами Radix UI**
+- **Framer Motion 12.23.26**
+
+### Інструменти розробки
+
+- **ESLint** 
+- **Prettier**
+- **Vitest 4.0.16**
+- **Storybook 10.1.11**
+- **Testing Library**
+
+## 🚀 Встановлення та запуск
+
+### Передумови
+
+- Node.js 18+
+- npm або yarn
+
+### Встановлення залежностей
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Запуск проєкту
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Розробка
+npm run dev
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Збірка для продакшну
+npm run build
 
-## Learn More
+# Запуск продакшн версії
+npm start
+``` 
+[http://localhost:3000]
 
-To learn more about Next.js, take a look at the following resources:
+## 📜 Доступні команди
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+# Розробка
+npm run dev              # Запуск dev сервера
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Збірка
+npm run build           # Збірка проєкту для продакшну
+npm run start           # Запуск продакшн версії
 
-## Deploy on Vercel
+# Якість коду
+npm run lint            # Запуск ESLint
+npm run format          # Форматування коду з Prettier
+npm run format:check    # Перевірка форматування
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Тестування
+npm run test            # Запуск тестів
+npm run test:watch      # Запуск тестів у режимі спостереження
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+# Storybook
+npm run storybook       # Запуск Storybook (http://localhost:6006)
+npm run build-storybook # Збірка Storybook для деплою
+```
+
+## 📁 Структура проєкту
+
+Проєкт використовує **Atomic Design** підхід для організації компонентів:
+
+```
+src/
+├── ui/
+│   ├── components/
+│   │   ├── atoms/          # Базові компоненти (Button, Input, Text, тощо)
+│   │   ├── molecules/      # Композиції атомів (Forms, Navigation blocks)
+│   │   ├── organisms/      # Складні компоненти (Header, Navigation, Sidebar)
+│   │   └── templates/      # Шаблони сторінок (Layout, DatacenterTemplate)
+│   ├── schemas/            # Zod схеми валідації
+│   └── types/              # TypeScript типи
+├── hooks/                  # Custom React hooks
+├── store/                  # Zustand stores
+├── utils/                  # Утилітарні функції
+└── styles/                 # Глобальні стилі
+
+app/                        # Next.js App Router
+├── (goodface)/
+│   ├── (product)/          # Layout для схожих сторінок(в перспективі)
+│   │   └── page.tsx        # Головна сторінка продукту(нповнення сторінки)
+│   └── layout.tsx          # Layout для goodface секції(для відображення головних компонентів)
+└── layout.tsx              # Root layout(базовий лаяут в якому встановлюються шрифти і мета)
+```
+
+### Path Aliases
+
+Проєкт використовує TypeScript path aliases для зручного імпорту:
+
+- `@atoms` - атомарні компоненти
+- `@molecules` - молекулярні компоненти
+- `@organisms` - організми
+- `@templates` - шаблони
+- `@types` - TypeScript типи
+- `@hooks` - React hooks
+- `@store` - Zustand stores
+- `@schemas` - Zod схеми
+- `@utils` - утиліти
+- `@styles` - стилі
+
+## 🧪 Тестування
+
+Проєкт включає:
+
+- **Unit тести** - приклади тестів компонентів (Vitest + Testing Library)
+- **Storybook** - ізоляція та документація компонентів
+
+Для запуску тестів:
+
+```bash
+npm run test
+```
+
+Для перегляду Storybook:
+
+```bash
+npm run storybook
+```
+
+## 📚 Додаткова документація
+
+Детальна інформація про архітектурні рішення знаходиться в файлі [ARCHITECTURE.md](./ARCHITECTURE.md).
+
+## 🎯 Реалізовані функції
+
+- ✅ Адаптивна верстка (десктоп + мобільні пристрої)
+- ✅ Компонентна архітектура (Atomic Design)
+- ✅ Semantic HTML
+- ✅ TypeScript типізація
+- ✅ Робота з формами (React Hook Form + Zod)
+- ✅ State management (Zustand)
+- ✅ ESLint + Prettier налаштування
+- ✅ Storybook приклади
+- ✅ Unit тести компонентів
