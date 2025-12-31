@@ -8,7 +8,7 @@ export const SchemaFormProxies = z.object({
   location: z.object({
     value: z.string().min(1),
     label: z.string().min(1),
-    available: z.number().nullable(),
+    available: z.number(),
     image: z.string().min(1),
   }),
 });

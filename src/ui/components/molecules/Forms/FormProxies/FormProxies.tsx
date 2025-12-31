@@ -1,8 +1,8 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm, useWatch } from "react-hook-form";
-import { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { memo, useMemo } from "react";
 
 import { Form, AtomWrapper, FormDescription } from "@atoms";
 import {
@@ -13,19 +13,19 @@ import {
 } from "@molecules";
 
 import { SchemaFormProxies } from "@schemas";
+import { useProxyCalculate } from "@hooks";
 import { useProxyFormData } from "@store";
-import { LocationType, PeriodType } from "@types";
+import { PeriodType } from "@types";
+
+const FormContext = memo(() => {
+  useProxyCalculate();
+  return null;
+});
+
+FormContext.displayName = 'FormContext';
 
 export const FormProxies = () => {
-  const {
-    count,
-    period,
-    location,
-    periodOptions,
-    setCount,
-    setPeriod,
-    setLocation,
-  } = useProxyFormData();
+  const { count, period, location, periodOptions } = useProxyFormData();
 
   const form = useForm({
     resolver: zodResolver(SchemaFormProxies),
@@ -36,46 +36,19 @@ export const FormProxies = () => {
     },
   });
 
-  const formCount = useWatch({
-    control: form.control,
-    name: "count",
-  });
-  const formPeriod = useWatch({
-    control: form.control,
-    name: "period",
-  });
-  const formLocation = useWatch({
-    control: form.control,
-    name: "location",
-  });
-  const availableProxies = useWatch({
-    control: form.control,
-    name: "location.available",
-  });
+  const checkMaxProxies = useMemo(() => {
+    return (count: number) => (count > 1000 ? 1000 : count);
+  }, []);
 
-  useEffect(() => {
-    setCount(formCount);
-  }, [formCount, setCount]);
-
-  useEffect(() => {
-    if (formPeriod) {
-      const period = periodOptions.find(
-        (option) => option.value === formPeriod
-      );
-      setPeriod(period?.value || "");
-    }
-  }, [formPeriod, periodOptions, setPeriod]);
-
-  useEffect(() => {
-    if (formLocation) {
-      setLocation(formLocation as LocationType);
-    }
-  }, [formLocation, setLocation]);
+  const maxProxies = useMemo(() => {
+    return checkMaxProxies(form.getValues("location.available") || 0);
+  }, [form, checkMaxProxies]);
 
   return (
     <Form {...form}>
       <AtomWrapper variant="product_main_content" asChild>
-        <form>
+        <form onSubmit={(e) => { e.preventDefault() }}>
+          <FormContext />
           <FormDescription
             title="Select number of IPs"
             description="Choose the perfect quantity of IPs for your needs effortlessly"
@@ -85,11 +58,7 @@ export const FormProxies = () => {
           <ProxiesCountPick
             name="count"
             min={0}
-            max={
-              availableProxies && availableProxies >= 1000
-                ? 1000
-                : availableProxies || 0
-            }
+            max={maxProxies}
             breaker={100}
           />
           <SubscriptionCycle
