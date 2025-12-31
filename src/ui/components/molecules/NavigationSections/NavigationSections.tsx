@@ -120,11 +120,11 @@ export const NavigationSections = () => {
     <>
       {navigationSections.map((section, idx) => {
         return (
-          <AtomWrapper variant="navigation_section" key={idx}>
+          <AtomWrapper variant="list" key={idx}>
             <AtomText variant="navigation_section_title">
               {section.title}
             </AtomText>
-            <AtomWrapper variant="navigation_section_content">
+            <AtomWrapper variant="hero_content">
               {section.content.map((item) => (
                 <AtomButton
                   key={item.name}

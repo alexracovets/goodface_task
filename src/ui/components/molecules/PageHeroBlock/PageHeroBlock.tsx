@@ -11,7 +11,7 @@ export const PageHeroBlock = () => {
         variant="hero"
       />
       <AtomWrapper variant="hero_content">
-        <AtomText variant="h4" className="text-grey-800" asChild>
+        <AtomText variant="heading1" className="text-grey-800" asChild>
           <h1>Datacenter Proxies</h1>
         </AtomText>
         <AtomText variant="hero_description">

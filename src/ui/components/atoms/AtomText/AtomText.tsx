@@ -10,7 +10,7 @@ export const variantsAtomText = cva("", {
   variants: {
     variant: {
       default: "",
-      h4: cn(
+      heading1: cn(
         "text-[24px] font-[500] leading-[32px]",
         "xl:text-[2.4rem] xl:leading-[3.2rem]"
       ),

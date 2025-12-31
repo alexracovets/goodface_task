@@ -57,10 +57,7 @@ const SliderField = ({
         }}
         name={name}
       />
-      <AtomWrapper
-        variant="slider_separator"
-        className="relative w-full h-[20px] xl:h-8"
-      >
+      <AtomWrapper className="relative w-full h-[20px] xl:h-8">
         {Array.from(
           {
             length: Math.floor((max - min) / breaker) + 1,

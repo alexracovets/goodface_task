@@ -9,7 +9,7 @@ import { cn } from "@utils";
 export const variantsAtomWrapper = cva("", {
   variants: {
     variant: {
-      default: "w-full",
+      default: "w-full relative",
       goodface_wrapper: cn(
         "grid grid-cols-[auto_1fr] h-screen",
         "max-sm:flex max-sm:flex-col max-sm:h-auto"
@@ -53,18 +53,7 @@ export const variantsAtomWrapper = cva("", {
       ),
       icon: cn("w-[20px] h-[20px]", "xl:w-[2rem] xl:h-[2rem]"),
       icon_small: cn("w-[16px] h-[16px]", "xl:w-[1.6rem] xl:h-[1.6rem]"),
-      navigation_section: cn(
-        "flex flex-col w-full gap-y-[8px]",
-        "xl:gap-y-[0.8rem]"
-      ),
-      navigation_section_content: cn(
-        "flex flex-col w-full gap-y-[4px]",
-        "xl:gap-y-[0.4rem]"
-      ),
-      navigation_additional: cn(
-        "flex flex-col w-full gap-y-[4px]",
-        "xl:gap-y-[0.4rem]"
-      ),
+      list: cn("flex flex-col w-full gap-y-[8px]", "xl:gap-y-[0.8rem]"),
       navigation_additional_content: cn(
         "flex flex-col w-full gap-y-[4px] px-[8px]",
         "xl:gap-y-[0.4rem] xl:px-[0.8rem]"
@@ -79,8 +68,6 @@ export const variantsAtomWrapper = cva("", {
       ),
       page_hero_block: cn("flex w-full gap-x-[16px]", "xl:gap-x-[1.6rem]"),
       hero_content: cn("flex flex-col gap-y-[4px]", "xl:gap-y-[0.4rem]"),
-      form_part_info: "flex flex-col w-full",
-      slider_separator: "flex justify-between items-center",
       slider_separator_item:
         "flex justify-center items-center first:justify-start last:justify-end",
       select_dropdown_item: cn(
@@ -88,10 +75,6 @@ export const variantsAtomWrapper = cva("", {
         "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[-0.02rem] xl:gap-x-[0.8rem] xl:px-[1.2rem] xl:py-[0.8rem]",
         "hover:bg-grey-100 hover:scale-[1.005] aria-selected:bg-grey-100 aria-selected:scale-[1.005] focus:bg-grey-100 focus:scale-[1.005]",
         "transition-all duration-300 ease-in-out"
-      ),
-      dropdown_item_inner: cn(
-        "flex items-center gap-x-[8px]",
-        "xl:gap-x-[0.8rem]"
       ),
       dropdown_item_additional: cn(
         "text-[12px] text-grey-500 font-[500] leading-[16px] tracking-[0.2px]",
@@ -107,24 +90,12 @@ export const variantsAtomWrapper = cva("", {
         "max-[1030px]:grid-cols-[auto_auto]",
         "max-sd:flex max-sd:flex-col max-sd:gap-y-[8px]"
       ),
-      additional_content_list: cn(
-        "flex flex-col gap-y-[8px] w-fit",
-        "xl:gap-y-[0.8rem]"
-      ),
-      additional_content_list_item: cn(
+      center_row_wrapper: cn(
         "flex items-center gap-x-[8px] w-full",
         "xl:gap-x-[0.8rem]"
       ),
-      aside_list_block: cn(
-        "flex flex-col gap-y-[8px] w-full",
-        "xl:gap-y-[0.8rem]"
-      ),
       aside_form_item: cn(
         "flex items-center justify-between gap-x-[8px] w-full",
-        "xl:gap-x-[0.8rem]"
-      ),
-      check_discount_form: cn(
-        "flex items-start gap-x-[8px] w-full",
         "xl:gap-x-[0.8rem]"
       ),
       burger_wrapper: cn(

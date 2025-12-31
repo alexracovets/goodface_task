@@ -46,7 +46,7 @@ export const FormElementSelect = ({
       render={({ field }) => {
         const selectedOption = field.value
           ? options.find((opt) => opt.value === field.value.value) ||
-          field.value
+            field.value
           : null;
 
         return (
@@ -116,7 +116,7 @@ export const FormElementSelect = ({
                               option.available === 0 && "grayscale"
                             )}
                           >
-                            <AtomWrapper variant="dropdown_item_inner">
+                            <AtomWrapper variant="center_row_wrapper">
                               <AtomImage
                                 src={option.image}
                                 alt={option.label}

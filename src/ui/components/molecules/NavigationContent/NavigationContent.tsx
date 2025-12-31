@@ -24,7 +24,7 @@ export const NavigationContent = () => {
     <CustomScroll className="h-full">
       <AtomWrapper variant="navigation_content">
         <NewProxies />
-        <AtomWrapper variant="navigation_section_content">
+        <AtomWrapper variant="hero_content">
           <AtomButton
             variant="navigation_item"
             data-active={"#" === pathname}

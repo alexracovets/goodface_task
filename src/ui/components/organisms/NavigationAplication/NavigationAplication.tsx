@@ -42,7 +42,12 @@ export const NavigationAplication = () => {
           asChild
         >
           <nav>
-            <Sheet open={isOpen} onOpenChange={setIsOpen} modal={false}>
+            <Sheet
+              open={isOpen}
+              onOpenChange={setIsOpen}
+              modal={false}
+              aria-label="Navigation Aplication"
+            >
               <NavigationHeader isInsideSheet={true} isModal={isOpen} />
               <SheetContent
                 side="left"

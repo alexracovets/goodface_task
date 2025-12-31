@@ -172,11 +172,7 @@ function FormDescription({
   formDescriptionId,
 }: FormDescriptionProps) {
   return (
-    <AtomWrapper
-      variant="form_part_info"
-      data-slot="form-description"
-      id={formDescriptionId}
-    >
+    <AtomWrapper data-slot="form-description" id={formDescriptionId}>
       <AtomText variant="form_part_title" asChild>
         <h2>{title}</h2>
       </AtomText>

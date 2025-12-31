@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { cn } from "@utils";
 
 export const Loader = ({ absolute }: { absolute?: boolean }) => {
-
   return (
     <motion.div
       initial={{ opacity: 1 }}
@@ -25,5 +24,5 @@ export const Loader = ({ absolute }: { absolute?: boolean }) => {
     >
       <LuLoaderCircle className="animate-spin text-[4rem] text-primary-500" />
     </motion.div>
-  )
+  );
 };

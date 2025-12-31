@@ -25,7 +25,7 @@ export const FormCheckDiscount = () => {
 
   return (
     <Form {...form}>
-      <AtomWrapper variant="check_discount_form" asChild>
+      <AtomWrapper variant="center_row_wrapper" asChild>
         <form onSubmit={form.handleSubmit(onSubmit)}>
           <FormElement
             name="discountCode"

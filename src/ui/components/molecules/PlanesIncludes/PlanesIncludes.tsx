@@ -24,14 +24,10 @@ export const PlanesIncludes = () => {
         <h2>All plans include</h2>
       </AtomText>
       <AtomWrapper variant="additional_content_lists">
-        <AtomWrapper variant="additional_content_list" asChild>
+        <AtomWrapper variant="list" className="w-fit" asChild>
           <ul>
             {firstHalf.map((item, idx) => (
-              <AtomWrapper
-                variant="additional_content_list_item"
-                key={idx}
-                asChild
-              >
+              <AtomWrapper variant="center_row_wrapper" key={idx} asChild>
                 <li>
                   <СircleCheck variant="icon" />
                   <AtomText variant="additional_content_list_item">
@@ -42,14 +38,10 @@ export const PlanesIncludes = () => {
             ))}
           </ul>
         </AtomWrapper>
-        <AtomWrapper variant="additional_content_list" asChild>
+        <AtomWrapper variant="list" className="w-fit" asChild>
           <ul>
             {secondHalf.map((item, idx) => (
-              <AtomWrapper
-                variant="additional_content_list_item"
-                key={idx}
-                asChild
-              >
+              <AtomWrapper variant="center_row_wrapper" key={idx} asChild>
                 <li>
                   <СircleCheck variant="icon" />
                   <AtomText variant="additional_content_list_item">

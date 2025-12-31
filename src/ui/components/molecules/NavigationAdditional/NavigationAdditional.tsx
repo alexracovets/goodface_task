@@ -56,7 +56,7 @@ const navigationAdditional = [
 
 export const NavigationAdditional = () => {
   return (
-    <AtomWrapper variant="navigation_additional" asChild>
+    <AtomWrapper variant="hero_content" asChild>
       <Accordion type="multiple" className="w-full">
         {navigationAdditional.map((item, idx) => (
           <AccordionItem key={idx} value={item.name}>
