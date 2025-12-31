@@ -47,7 +47,7 @@
   --breakpoint-short-desktop: 1400px;
   --breakpoint-md: 1240px;
   --breakpoint-sd: 930px;
-  --breakpoint-sm: 769px;
+  --breakpoint-sm: 768px;
 }
 
 * {

@@ -102,6 +102,7 @@ export const FormElement = ({
                 id={name}
                 name={name}
                 type={type === "number" ? "text" : type}
+                inputMode={type === "number" ? "numeric" : undefined}
                 max={max}
                 error={error}
                 disabled={disabled}

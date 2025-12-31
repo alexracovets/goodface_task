@@ -22,12 +22,13 @@ export const variantsAtomWrapper = cva("", {
         "grid grid-cols-[1fr_auto] grid-rows-[1fr_auto] w-full gap-x-[48px] xl:gap-x-[4.8rem] gap-y-[16px] xl:gap-y-[1.6rem] min-h-0",
         "max-short-desktop:gap-x-[16px]",
         "md:gap-y-[24px]",
-        "max-md:flex max-md:flex-col"
+        "max-md:flex max-md:flex-col",
       ),
       product_main: cn(
         "w-full flex flex-col py-[24px] xl:py-[2.4rem] px-[48px] xl:px-[4.8rem] gap-y-[24px] xl:gap-y-[2.4rem]",
         "max-short-desktop:px-[16px]",
-        "max-sm:px-[16px] max-md:gap-y-[16px]"
+        "max-sm:px-[16px] max-md:gap-y-[16px]",
+        "max-sm:mt-[72px]"
       ),
       product_sidebar: cn(
         "w-[360px] xl:w-[36rem] flex flex-col gap-y-[16px] xl:gap-y-[1.6rem] order-1",
