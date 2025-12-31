@@ -80,7 +80,7 @@ export const FormElement = ({
             },
           });
         };
-        
+
         // If label is not present, add aria-label for accessibility
         // Використовуємо aria-label з props, або placeholder, або name як доступну назву
         const propsWithAriaLabel = props as { "aria-label"?: string };

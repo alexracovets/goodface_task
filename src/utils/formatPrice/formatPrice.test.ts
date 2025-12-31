@@ -23,4 +23,3 @@ describe("formatPrice", () => {
     expect(formatPrice(0.01)).toBe("$0.01");
   });
 });
-

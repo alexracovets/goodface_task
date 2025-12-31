@@ -11,7 +11,9 @@ describe("AtomButton", () => {
   });
 
   it("рендерить кнопку з різними варіантами", () => {
-    const { rerender } = render(<AtomButton variant="primary">Primary</AtomButton>);
+    const { rerender } = render(
+      <AtomButton variant="primary">Primary</AtomButton>
+    );
     let button = screen.getByRole("button");
     expect(button).toBeInTheDocument();
 
@@ -49,7 +51,11 @@ describe("AtomButton", () => {
   });
 
   it("передає інші props до кнопки", () => {
-    render(<AtomButton disabled data-testid="test-button">Button</AtomButton>);
+    render(
+      <AtomButton disabled data-testid="test-button">
+        Button
+      </AtomButton>
+    );
     const button = screen.getByTestId("test-button");
     expect(button).toBeDisabled();
   });
@@ -72,4 +78,3 @@ describe("AtomButton", () => {
     expect(link).toHaveAttribute("href", "/test");
   });
 });
-

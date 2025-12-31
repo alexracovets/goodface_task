@@ -39,7 +39,8 @@ const meta = {
     },
     "aria-label": {
       control: "text",
-      description: "Accessible label for the input (required when no visible label is present)",
+      description:
+        "Accessible label for the input (required when no visible label is present)",
     },
   },
   args: { onChange: fn() },
@@ -58,7 +59,7 @@ export const Default: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const input = canvas.getByLabelText("Text input");
-    
+
     await expect(input).toBeInTheDocument();
     await expect(input).toHaveAttribute("aria-label", "Text input");
   },
@@ -74,7 +75,7 @@ export const DiscountCode: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const input = canvas.getByLabelText("Discount code");
-    
+
     await expect(input).toBeInTheDocument();
     await expect(input).toHaveAttribute("aria-label", "Discount code");
   },
@@ -90,7 +91,7 @@ export const WithValue: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const input = canvas.getByLabelText("Text input");
-    
+
     await expect(input).toBeInTheDocument();
     await expect(input).toHaveValue("Sample text");
     await expect(input).toHaveAttribute("aria-label", "Text input");

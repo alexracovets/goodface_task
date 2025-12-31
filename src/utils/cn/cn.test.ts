@@ -32,4 +32,3 @@ describe("cn", () => {
     expect(cn("base", "")).toBe("base");
   });
 });
-

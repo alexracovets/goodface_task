@@ -44,7 +44,9 @@ const SheetExample = ({
           <AtomText>Sheet content goes here.</AtomText>
         </div>
         <SheetFooter>
-          <AtomButton variant="primary" aria-label="Save">Save</AtomButton>
+          <AtomButton variant="primary" aria-label="Save">
+            Save
+          </AtomButton>
         </SheetFooter>
       </SheetContent>
     </Sheet>

@@ -64,10 +64,10 @@ export const Default: Story = {
   play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: "Button" });
-    
+
     await expect(button).toBeInTheDocument();
     await expect(button).toHaveAttribute("data-slot", "button");
-    
+
     if (args.onClick) {
       await userEvent.click(button);
       await expect(args.onClick).toHaveBeenCalled();
@@ -83,7 +83,7 @@ export const Primary: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: "Primary" });
-    
+
     await expect(button).toBeInTheDocument();
   },
 };
@@ -111,7 +111,7 @@ export const Icon: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: "Notifications" });
-    
+
     await expect(button).toBeInTheDocument();
     await expect(button).toHaveAttribute("aria-label", "Notifications");
   },
@@ -138,7 +138,7 @@ export const UserDetails: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: "User menu" });
-    
+
     await expect(button).toBeInTheDocument();
     await expect(button).toHaveAttribute("aria-label", "User menu");
   },
@@ -153,7 +153,7 @@ export const BurgerButton: Story = {
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     const button = canvas.getByRole("button", { name: "Open menu" });
-    
+
     await expect(button).toBeInTheDocument();
     await expect(button).toHaveAttribute("aria-label", "Open menu");
   },

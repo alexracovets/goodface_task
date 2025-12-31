@@ -30,10 +30,13 @@ describe("TableHelperColumnText", () => {
       label: "Test Label",
     });
 
-    const headerFunction = typeof column.header === "function" ? column.header : null;
+    const headerFunction =
+      typeof column.header === "function" ? column.header : null;
     expect(headerFunction).toBeTruthy();
     const mockHeaderContext = {} as HeaderContext<TableDataType, string>;
-    const { container } = render(headerFunction!(mockHeaderContext) as React.ReactElement);
+    const { container } = render(
+      headerFunction!(mockHeaderContext) as React.ReactElement
+    );
     expect(container.textContent).toBe("Test Label");
   });
 
@@ -44,10 +47,13 @@ describe("TableHelperColumnText", () => {
       align: "left",
     });
 
-    const headerFunction = typeof column.header === "function" ? column.header : null;
+    const headerFunction =
+      typeof column.header === "function" ? column.header : null;
     expect(headerFunction).toBeTruthy();
     const mockHeaderContext = {} as HeaderContext<TableDataType, string>;
-    const { container } = render(headerFunction!(mockHeaderContext) as React.ReactElement);
+    const { container } = render(
+      headerFunction!(mockHeaderContext) as React.ReactElement
+    );
     const textElement = container.querySelector('[data-slot="text"]');
     expect(textElement).toHaveClass("text-left");
   });
@@ -59,10 +65,13 @@ describe("TableHelperColumnText", () => {
       align: "right",
     });
 
-    const headerFunction = typeof column.header === "function" ? column.header : null;
+    const headerFunction =
+      typeof column.header === "function" ? column.header : null;
     expect(headerFunction).toBeTruthy();
     const mockHeaderContext = {} as HeaderContext<TableDataType, string>;
-    const { container } = render(headerFunction!(mockHeaderContext) as React.ReactElement);
+    const { container } = render(
+      headerFunction!(mockHeaderContext) as React.ReactElement
+    );
     const textElement = container.querySelector('[data-slot="text"]');
     expect(textElement).toHaveClass("text-right");
   });
@@ -74,10 +83,13 @@ describe("TableHelperColumnText", () => {
       align: "center",
     });
 
-    const headerFunction = typeof column.header === "function" ? column.header : null;
+    const headerFunction =
+      typeof column.header === "function" ? column.header : null;
     expect(headerFunction).toBeTruthy();
     const mockHeaderContext = {} as HeaderContext<TableDataType, string>;
-    const { container } = render(headerFunction!(mockHeaderContext) as React.ReactElement);
+    const { container } = render(
+      headerFunction!(mockHeaderContext) as React.ReactElement
+    );
     const textElement = container.querySelector('[data-slot="text"]');
     expect(textElement).toHaveClass("text-center");
   });
@@ -94,7 +106,9 @@ describe("TableHelperColumnText", () => {
       getValue: () => "Test Value",
     } as unknown as CellContext<TableDataType, string>;
 
-    const { container } = render(cellFunction!(mockCellContext) as React.ReactElement);
+    const { container } = render(
+      cellFunction!(mockCellContext) as React.ReactElement
+    );
     expect(container.textContent).toBe("Test Value");
   });
 
@@ -110,7 +124,9 @@ describe("TableHelperColumnText", () => {
       getValue: () => "",
     } as unknown as CellContext<TableDataType, string>;
 
-    const { container } = render(cellFunction!(mockCellContext) as React.ReactElement);
+    const { container } = render(
+      cellFunction!(mockCellContext) as React.ReactElement
+    );
     expect(container.textContent).toBe("-");
   });
 
@@ -126,7 +142,9 @@ describe("TableHelperColumnText", () => {
       getValue: () => null,
     } as unknown as CellContext<TableDataType, string>;
 
-    const { container } = render(cellFunction!(mockCellContext) as React.ReactElement);
+    const { container } = render(
+      cellFunction!(mockCellContext) as React.ReactElement
+    );
     expect(container.textContent).toBe("-");
   });
 
@@ -143,10 +161,11 @@ describe("TableHelperColumnText", () => {
       getValue: () => "$10.00",
     } as unknown as CellContext<TableDataType, string>;
 
-    const { container } = render(cellFunction!(mockCellContext) as React.ReactElement);
+    const { container } = render(
+      cellFunction!(mockCellContext) as React.ReactElement
+    );
     const textElement = container.querySelector('[data-slot="text"]');
     expect(textElement).toHaveClass("text-right");
     expect(container.textContent).toBe("$10.00");
   });
 });
-

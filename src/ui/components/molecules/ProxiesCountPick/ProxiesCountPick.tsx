@@ -132,7 +132,9 @@ export const ProxiesCountPick = ({
 
       <AtomButton
         variant="destructive"
-        aria-label={isSlider ? "Enter a custom quantity" : "Select from the range"}
+        aria-label={
+          isSlider ? "Enter a custom quantity" : "Select from the range"
+        }
         type="button"
         onClick={() => setIsSlider((prev) => !prev)}
       >

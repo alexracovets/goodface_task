@@ -37,7 +37,8 @@ const meta = {
     },
     "aria-label": {
       control: "text",
-      description: "Accessible label for the slider (required for accessibility)",
+      description:
+        "Accessible label for the slider (required for accessibility)",
     },
   },
 } satisfies Meta<typeof Slider>;
