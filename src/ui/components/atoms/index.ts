@@ -18,7 +18,7 @@ export {
   ChevronLeftIcon,
   ChevronDownIcon,
   ClipboardList,
-  UserPlusIcon, 
+  UserPlusIcon,
   СircleCheck,
   MonitorIcon,
   ReceiptIcon,
@@ -81,5 +81,9 @@ export {
   Sheet,
 } from "./Sheet";
 
-export { FormElementRadio, FormElementSelect, FormElement } from "./FormsElements";
-export { CustomScroll } from "./CustomScroll"; 
+export {
+  FormElementRadio,
+  FormElementSelect,
+  FormElement,
+} from "./FormsElements";
+export { CustomScroll } from "./CustomScroll";

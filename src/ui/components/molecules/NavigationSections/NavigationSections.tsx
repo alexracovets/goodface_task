@@ -18,9 +18,11 @@ import {
   KeyIcon,
   CoinIcon,
   UserPlusIcon,
+  variantsAtomWrapper,
 } from "@atoms";
 
 import { NavigationIconType } from "@types";
+import { cn } from "@utils";
 
 const navigationSections = [
   {
@@ -96,6 +98,22 @@ const navigationSections = [
   },
 ];
 
+// Допоміжна функція для додавання класів розміру до іконок
+const renderIcon = (icon: React.ReactNode) => {
+  if (!React.isValidElement(icon)) return icon;
+
+  const existingClassName =
+    (icon.props as { className?: string })?.className || "";
+  const iconClassName = cn(
+    variantsAtomWrapper({ variant: "icon" }),
+    existingClassName
+  );
+
+  return React.cloneElement(icon as React.ReactElement<NavigationIconType>, {
+    className: iconClassName,
+  });
+};
+
 export const NavigationSections = () => {
   const pathname = usePathname();
   return (
@@ -116,20 +134,10 @@ export const NavigationSections = () => {
                 >
                   <AtomLink href={item.link}>
                     <AtomWrapper variant="navigation_item_content">
-                      {React.isValidElement(item.icon)
-                        ? React.cloneElement(
-                            item.icon as React.ReactElement<NavigationIconType>,
-                            {
-                              className: `w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] ${
-                                (item.icon.props as { className?: string })
-                                  ?.className || ""
-                              }`.trim(),
-                            }
-                          )
-                        : item.icon}
+                      {renderIcon(item.icon)}
                       {item.name}
                     </AtomWrapper>
-                    {item.live && <LiveLog className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem]" />}
+                    {item.live && <LiveLog variant="icon" />}
                   </AtomLink>
                 </AtomButton>
               ))}

@@ -1,10 +1,14 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const ClipboardList = ({ className }: NavigationIconType) => {
+export const ClipboardList = ({
+  className,
+  variant = "icon",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -21,6 +25,6 @@ export const ClipboardList = ({ className }: NavigationIconType) => {
         <path d="M9 16l.01 0" />
         <path d="M13 16l2 0" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

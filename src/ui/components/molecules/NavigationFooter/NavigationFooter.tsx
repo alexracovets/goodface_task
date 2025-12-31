@@ -10,7 +10,7 @@ export const NavigationFooter = () => {
         <AtomText variant="user_email">henry.smith@gmail.com</AtomText>
       </div>
       <AtomButton variant="user_details">
-        <DotsVerticalIcon className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem]" />
+        <DotsVerticalIcon />
       </AtomButton>
     </div>
   );

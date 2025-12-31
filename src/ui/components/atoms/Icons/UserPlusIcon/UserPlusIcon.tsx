@@ -1,10 +1,14 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const UserPlusIcon = ({ className }: NavigationIconType) => {
+export const UserPlusIcon = ({
+  className,
+  variant = "icon",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -19,6 +23,6 @@ export const UserPlusIcon = ({ className }: NavigationIconType) => {
         <path d="M19 16v6" />
         <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

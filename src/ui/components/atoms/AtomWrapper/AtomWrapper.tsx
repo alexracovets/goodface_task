@@ -51,14 +51,8 @@ export const variantsAtomWrapper = cva("", {
         "flex flex-col w-full gap-y-[16px] p-[16px]",
         "xl:gap-y-[1.6rem] xl:p-[1.6rem]"
       ),
-      icon: cn(
-        "w-[20px] h-[20px]",
-        "xl:w-[2rem] xl:h-[2rem]"
-      ),
-      icon_small: cn(
-        "w-[16px] h-[16px]",
-        "xl:w-[1.6rem] xl:h-[1.6rem]"
-      ),
+      icon: cn("w-[20px] h-[20px]", "xl:w-[2rem] xl:h-[2rem]"),
+      icon_small: cn("w-[16px] h-[16px]", "xl:w-[1.6rem] xl:h-[1.6rem]"),
       navigation_section: cn(
         "flex flex-col w-full gap-y-[8px]",
         "xl:gap-y-[0.8rem]"
@@ -83,14 +77,8 @@ export const variantsAtomWrapper = cva("", {
         "flex items-center justify-between gap-x-[16px] pl-[12px] pr-[8px]",
         "xl:gap-x-[1.6rem] xl:pl-[1.2rem] xl:pr-[0.8rem]"
       ),
-      page_hero_block: cn(
-        "flex w-full gap-x-[16px]",
-        "xl:gap-x-[1.6rem]"
-      ),
-      hero_content: cn(
-        "flex flex-col gap-y-[4px]",
-        "xl:gap-y-[0.4rem]"
-      ),
+      page_hero_block: cn("flex w-full gap-x-[16px]", "xl:gap-x-[1.6rem]"),
+      hero_content: cn("flex flex-col gap-y-[4px]", "xl:gap-y-[0.4rem]"),
       form_part_info: "flex flex-col w-full",
       slider_separator: "flex justify-between items-center",
       slider_separator_item:

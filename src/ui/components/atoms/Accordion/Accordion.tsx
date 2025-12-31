@@ -87,7 +87,7 @@ function AccordionTrigger({
         <div className={variantsAccordionTriggerInner({ variantInner })}>
           {children}
         </div>
-        <ChevronRightIcon className="w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] text-grey-600 translate-y-0.5 transition-transform duration-200" />
+        <ChevronRightIcon className="text-grey-600 translate-y-0.5 transition-transform duration-200" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
@@ -104,7 +104,14 @@ function AccordionContent({
       className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden"
       {...props}
     >
-      <div className={cn("pt-[4px] xl:pt-[0.4rem] pb-[12px] xl:pb-[1.2rem]", className)}>{children}</div>
+      <div
+        className={cn(
+          "pt-[4px] xl:pt-[0.4rem] pb-[12px] xl:pb-[1.2rem]",
+          className
+        )}
+      >
+        {children}
+      </div>
     </AccordionPrimitive.Content>
   );
 }

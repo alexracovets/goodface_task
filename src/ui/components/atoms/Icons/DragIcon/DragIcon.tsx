@@ -1,10 +1,14 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const DragIcon = ({ className }: NavigationIconType) => {
+export const DragIcon = ({
+  className,
+  variant = "icon",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <rect width="22" height="22" rx="3" fill="white" />
         <path
@@ -24,6 +28,6 @@ export const DragIcon = ({ className }: NavigationIconType) => {
           fill="#D2D6DB"
         />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

@@ -1,10 +1,14 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const HelpCircle = ({ className }: NavigationIconType) => {
+export const HelpCircle = ({
+  className,
+  variant = "icon",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -18,6 +22,6 @@ export const HelpCircle = ({ className }: NavigationIconType) => {
         <path d="M12 16v.01" />
         <path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

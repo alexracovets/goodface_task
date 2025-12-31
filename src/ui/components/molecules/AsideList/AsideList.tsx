@@ -17,7 +17,7 @@ export const AsideList = () => {
               asChild
             >
               <li>
-                <СircleCheck className="w-[20px] xl:w-[2rem] min-w-[20px] xl:min-w-[2rem] h-[20px] xl:h-[2rem] min-h-[20px] xl:min-h-[2rem]" />
+                <СircleCheck variant="icon" />
                 <AtomText variant="additional_content_list_item">
                   {item}
                 </AtomText>

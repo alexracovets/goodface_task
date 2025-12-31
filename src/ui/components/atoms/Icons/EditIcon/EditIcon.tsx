@@ -1,8 +1,14 @@
 "use client";
 
-export const EditIcon = ({ className }: { className?: string }) => {
+import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
+
+export const EditIcon = ({
+  className,
+  variant = "icon_small",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -16,6 +22,6 @@ export const EditIcon = ({ className }: { className?: string }) => {
         <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
         <path d="M16 5l3 3" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

@@ -1,10 +1,14 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const BasketIcon = ({ className }: NavigationIconType) => {
+export const BasketIcon = ({
+  className,
+  variant = "icon",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -19,6 +23,6 @@ export const BasketIcon = ({ className }: NavigationIconType) => {
         <path d="M17 10l-2 -6" />
         <path d="M7 10l2 -6" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

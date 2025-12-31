@@ -75,7 +75,7 @@ export const Slider = ({
                 </svg>
               </div>
             </div>
-            <DragIcon className="w-[22px] xl:w-[2.2rem] h-[22px] xl:h-[2.2rem]" />
+            <DragIcon />
           </SliderPrimitive.Thumb>
         ))}
     </SliderPrimitive.Root>

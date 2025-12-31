@@ -32,7 +32,7 @@ export const NavigationContent = () => {
           >
             <AtomLink href={"#"}>
               <AtomWrapper variant="navigation_item_content">
-                <LayoutDashboardIcon className="w-[20px] h-[20px] xl:w-[2rem] xl:h-[2rem]" />
+                <LayoutDashboardIcon />
                 Dashboard
               </AtomWrapper>
             </AtomLink>

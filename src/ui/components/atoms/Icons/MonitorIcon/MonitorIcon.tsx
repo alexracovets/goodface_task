@@ -1,10 +1,14 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const MonitorIcon = ({ className }: NavigationIconType) => {
+export const MonitorIcon = ({
+  className,
+  variant = "icon",
+}: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -23,6 +27,6 @@ export const MonitorIcon = ({ className }: NavigationIconType) => {
         <path d="M15 12v-2" />
         <path d="M12 12v-1" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

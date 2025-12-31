@@ -1,13 +1,19 @@
 "use client";
 
-interface BurgerIconProps {
-  className?: string;
+import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
+
+interface BurgerIconProps extends NavigationIconType {
   active?: boolean;
 }
 
-export const BurgerIcon = ({ className, active }: BurgerIconProps) => {
+export const BurgerIcon = ({
+  className,
+  variant = "icon",
+  active,
+}: BurgerIconProps) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
@@ -50,6 +56,6 @@ export const BurgerIcon = ({ className, active }: BurgerIconProps) => {
           }}
         />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

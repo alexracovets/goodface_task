@@ -139,7 +139,7 @@ export const ProxiesCountPick = ({
       >
         {isSlider ? (
           <>
-            <EditIcon className="w-[16px] xl:w-[1.6rem] h-[16px] xl:h-[1.6rem]" />
+            <EditIcon />
             Enter a custom quantity
           </>
         ) : (

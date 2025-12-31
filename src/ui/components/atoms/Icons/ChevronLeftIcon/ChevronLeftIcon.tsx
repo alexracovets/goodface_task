@@ -3,7 +3,10 @@
 import { AtomWrapper } from "@atoms";
 import { NavigationIconType } from "@types";
 
-export const ChevronLeftIcon = ({ className, variant = "icon_small" }: NavigationIconType) => {
+export const ChevronLeftIcon = ({
+  className,
+  variant = "icon_small",
+}: NavigationIconType) => {
   return (
     <AtomWrapper variant={variant} className={className}>
       <svg

@@ -22,7 +22,7 @@ const FormContext = memo(() => {
   return null;
 });
 
-FormContext.displayName = 'FormContext';
+FormContext.displayName = "FormContext";
 
 export const FormProxies = () => {
   const { count, period, location, periodOptions } = useProxyFormData();
@@ -47,7 +47,11 @@ export const FormProxies = () => {
   return (
     <Form {...form}>
       <AtomWrapper variant="product_main_content" asChild>
-        <form onSubmit={(e) => { e.preventDefault() }}>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <FormContext />
           <FormDescription
             title="Select number of IPs"

@@ -12,7 +12,11 @@ function Table({ className, ...props }: React.ComponentProps<"table">) {
       className="border border-gray-200 rounded-[8px] xl:rounded-[0.8rem] w-full overflow-hidden"
     >
       <CustomScroll className="w-full">
-        <table data-slot="table" className={cn("min-w-full", className)} {...props} />
+        <table
+          data-slot="table"
+          className={cn("min-w-full", className)}
+          {...props}
+        />
       </CustomScroll>
     </div>
   );

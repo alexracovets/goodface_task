@@ -31,7 +31,7 @@
       "@types": ["./src/ui/types"],
       "@hooks": ["./src/hooks"],
       "@store": ["./src/store"],
-      "@schemas": ["./src/ui/schemas"]  
+      "@schemas": ["./src/ui/schemas"]
     }
   },
   "include": [
