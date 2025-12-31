@@ -46,10 +46,10 @@ export const NavigationAplication = () => {
               <NavigationHeader isInsideSheet={true} isModal={isOpen} />
               <SheetContent
                 side="left"
-                className="max-sm:w-full flex flex-col bg-base-white border-grey-200 top-[72px] xl:top-[7rem] h-[calc(100vh-72px)] xl:h-[calc(100vh-7rem)]"
+                className="max-sm:w-full flex flex-col bg-base-white border-grey-200 top-[72px] xl:top-28 h-[calc(100vh-72px)] xl:h-[calc(100vh-7rem)]"
               >
                 <SheetTitle
-                  className="absolute w-[1px] h-[1px] p-0 -m-[1px] overflow-hidden whitespace-nowrap border-0"
+                  className="absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0"
                   style={{ clipPath: "inset(50%)" }}
                 >
                   Navigation Menu

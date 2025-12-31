@@ -113,7 +113,7 @@ export const variantsFormLabel = cva(
       variant: {
         default: cn(
           "text-[14px] text-grey-800 font-[700] leading-[20px] tracking-[0.2px]",
-          "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[0.02rem]"
+          "xl:text-[1.4rem] xl:leading-8 xl:tracking-[0.02rem]"
         ),
       },
     },
@@ -212,7 +212,7 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
               id={formMessageId}
               className={cn(
                 "text-[14px] text-red-500 leading-[20px] tracking-[-0.2px] w-full",
-                "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[-0.02rem]",
+                "xl:text-[1.4rem] xl:leading-8 xl:tracking-[-0.02rem]",
                 className
               )}
               {...props}
