@@ -11,7 +11,10 @@ export const variantsAtomButton = cva(
   {
     variants: {
       variant: {
-        default: "",
+        default: cn(
+          "text-[14px] text-grey-800 font-[500] leading-[20px] tracking-[-0.2px] flex items-center justify-between gap-x-[8px] bg-base-white w-full pl-[12px] pr-[12px] py-[10px]",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[-0.02rem] xl:gap-x-[0.8rem] xl:pl-[1.2rem] xl:pr-[1.2rem] xl:py-[1rem]"
+        ),
         primary: cn(
           "text-[16px] text-base-white font-[700] leading-[24px] flex justify-center items-center px-[12px] py-[8px] bg-primary-500 border-none",
           "xl:text-[1.6rem] xl:leading-[2.4rem] xl:py-[0.8rem] xl:px-[1.2rem]"
@@ -37,10 +40,6 @@ export const variantsAtomButton = cva(
           "xl:text-[1.4rem] xl:leading-[2rem] xl:py-[0.4rem]",
           "[&[data-active='true']]:text-primary-500 [&[data-active='true']]:bg-primary-50 hover:text-primary-500 hover:bg-primary-50",
           "transition-all duration-300 ease-in"
-        ),
-        select: cn(
-          "text-[14px] text-grey-800 font-[500] leading-[20px] tracking-[-0.2px] flex items-center justify-between gap-x-[8px] bg-base-white w-full pl-[12px] pr-[12px] py-[10px]",
-          "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[-0.02rem] xl:gap-x-[0.8rem] xl:pl-[1.2rem] xl:pr-[1.2rem] xl:py-[1rem]"
         ),
         burger_button: "flex items-center justify-center border-none",
       },

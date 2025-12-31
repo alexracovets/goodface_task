@@ -46,7 +46,7 @@ export const FormElementSelect = ({
       render={({ field }) => {
         const selectedOption = field.value
           ? options.find((opt) => opt.value === field.value.value) ||
-            field.value
+          field.value
           : null;
 
         return (
@@ -68,7 +68,7 @@ export const FormElementSelect = ({
                 disabled={options.length === 0}
               >
                 <Select.Trigger aria-label={label} asChild>
-                  <AtomButton type="button" variant="select">
+                  <AtomButton type="button" variant="default">
                     <Select.Value placeholder={placeholder} asChild>
                       <div className="flex items-center gap-x-[8px] xl:gap-x-[0.8rem]">
                         {selectedOption?.image ? (
