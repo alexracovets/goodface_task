@@ -1,10 +1,10 @@
 export { LayoutDashboardIcon } from "./LayoutDashboardIcon";
+export { ChevronRightIcon } from "./ChevronRightIcon";
 export { DotsVerticalIcon } from "./DotsVerticalIcon";
 export { ChevronDownIcon } from "./ChevronDownIcon";
 export { ChevronLeftIcon } from "./ChevronLeftIcon";
 export { ClipboardList } from "./ClipboardList";
 export { UserPlusIcon } from "./UserPlusIcon";
-export { ChevronRight } from "./ChevronRight";
 export { СircleCheck } from "./СircleСheck";
 export { ReceiptIcon } from "./ReceiptIcon";
 export { MonitorIcon } from "./MonitorIcon";

@@ -25,16 +25,18 @@ function AccordionItem({
 }
 
 const variantsAccordionTrigger = cva(
-  "flex items-center justify-between gap-x-[16px] xl:gap-x-[1.6rem] w-full transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-90",
+  "flex items-center justify-between gap-x-[16px] w-full outline-none disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-90 transition-all xl:gap-x-[1.6rem]",
   {
     variants: {
       variant: {
         default: cn(
-          "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500] pl-[12px] xl:pl-[1.2rem] pr-[8px] xl:pr-[0.8rem] py-[4px] xl:py-[0.4rem]",
-          "[&[data-state=open]]:text-primary-500 [&[data-state=open]]:bg-primary-50 rounded-[4px] xl:rounded-[0.4rem]"
+          "text-[14px] text-grey-800 font-[500] leading-[20px] flex items-center justify-between pl-[12px] pr-[8px] py-[4px] rounded-[4px]",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:pl-[1.2rem] xl:pr-[0.8rem] xl:py-[0.4rem] xl:rounded-[0.4rem]",
+          "[&[data-state=open]]:text-primary-500 [&[data-state=open]]:bg-primary-50"
         ),
         discounts: cn(
-          "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500] pr-[8px] xl:pr-[0.8rem] py-[4px] xl:py-[0.4rem] w-fit gap-x-[4px] xl:gap-x-[0.4rem]",
+          "text-[14px] text-grey-800 font-[500] leading-[20px] flex items-center justify-between gap-x-[4px] pr-[8px] py-[4px] w-fit",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:gap-x-[0.4rem] xl:pr-[0.8rem] xl:py-[0.4rem]",
           "[&>svg]:rotate-90 [&[data-state=open]>svg]:rotate-270"
         ),
       },
@@ -50,8 +52,14 @@ const variantsAccordionTriggerInner = cva(
   {
     variants: {
       variantInner: {
-        default: "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500]",
-        discounts: "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500]",
+        default: cn(
+          "text-[14px] text-grey-800 font-[500] leading-[20px]",
+          "xl:text-[1.4rem] xl:leading-[2rem]"
+        ),
+        discounts: cn(
+          "text-[14px] text-grey-800 font-[500] leading-[20px]",
+          "xl:text-[1.4rem] xl:leading-[2rem]"
+        ),
       },
     },
   }

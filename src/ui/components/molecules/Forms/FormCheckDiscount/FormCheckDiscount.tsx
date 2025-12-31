@@ -33,7 +33,11 @@ export const FormCheckDiscount = () => {
             variant="discount_code"
             error={!!form.formState.errors.discountCode}
           />
-          <AtomButton type="submit" disabled={isSubmitting} variant="discount">
+          <AtomButton
+            variant="secondary"
+            type="submit"
+            disabled={isSubmitting}
+          >
             Apply
           </AtomButton>
         </form>

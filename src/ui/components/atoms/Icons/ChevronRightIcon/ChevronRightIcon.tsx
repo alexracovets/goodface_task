@@ -1,10 +1,11 @@
 "use client";
 
 import { NavigationIconType } from "@types";
+import { AtomWrapper } from "@atoms";
 
-export const ChevronRight = ({ className }: NavigationIconType) => {
+export const ChevronRightIcon = ({ className, variant = "icon" }: NavigationIconType) => {
   return (
-    <div className={className}>
+    <AtomWrapper variant={variant} className={className}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="32"
@@ -18,6 +19,6 @@ export const ChevronRight = ({ className }: NavigationIconType) => {
       >
         <path d="M9 6l6 6l-6 6" />
       </svg>
-    </div>
+    </AtomWrapper>
   );
 };

@@ -19,7 +19,7 @@ interface TableDataProps {
 
 export const TableData = ({ table }: TableDataProps) => {
   return (
-    <Table className="w-fit mx-auto">
+    <Table className="w-fit mx-auto max-w-full">
       <TableHeader className="sticky top-0 z-10">
         {table.getHeaderGroups().map((headerGroup) => (
           <TableRow key={headerGroup.id}>
@@ -34,9 +34,9 @@ export const TableData = ({ table }: TableDataProps) => {
                 {header.isPlaceholder
                   ? null
                   : flexRender(
-                      header.column.columnDef.header,
-                      header.getContext()
-                    )}
+                    header.column.columnDef.header,
+                    header.getContext()
+                  )}
               </TableHead>
             ))}
           </TableRow>

@@ -13,12 +13,12 @@ export { Slider } from "./Slider";
 
 export {
   LayoutDashboardIcon,
+  ChevronRightIcon,
   DotsVerticalIcon,
   ChevronLeftIcon,
   ChevronDownIcon,
   ClipboardList,
-  UserPlusIcon,
-  ChevronRight,
+  UserPlusIcon, 
   СircleCheck,
   MonitorIcon,
   ReceiptIcon,

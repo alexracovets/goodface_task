@@ -7,33 +7,40 @@ import { AtomButtonType } from "@types";
 import { cn } from "@utils";
 
 export const variantsAtomButton = cva(
-  "block border-[1px] xl:border-[0.1rem] border-grey-300 cursor-pointer rounded-[4px] xl:rounded-[0.4rem]",
+  "relative block cursor-pointer border-[1px] border-grey-300 rounded-[4px] xl:border-[0.1rem] xl:rounded-[0.4rem]",
   {
     variants: {
       variant: {
         default: "",
-        primary:
-          "text-[16px] xl:text-[1.6rem] font-[700] leading-[24px] xl:leading-[2.4rem] text-base-white py-[8px] xl:py-[0.8rem] px-[12px] xl:px-[1.2rem] bg-primary-500 rounded-[4px] xl:rounded-[0.4rem] border-none",
-        back: cn(
-          "flex justify-start items-center gap-x-[4px] xl:gap-x-[0.4rem] text-[13px] xl:text-[1.3rem] font-[700] text-grey-800 leading-[20px] xl:leading-[2rem] px-[12px] xl:px-[1.2rem] py-[4px] xl:py-[0.4rem]"
+        primary: cn(
+          "text-[16px] text-base-white font-[700] leading-[24px] flex justify-center items-center px-[12px] py-[8px] bg-primary-500 border-none",
+          "xl:text-[1.6rem] xl:leading-[2.4rem] xl:py-[0.8rem] xl:px-[1.2rem]"
         ),
-        notification:
-          "relative w-[36px] xl:w-[3.6rem] h-[36px] xl:h-[3.6rem] cursor-pointer flex items-center justify-center border-none",
-        user_details: "border-none outline-none p-[4px] xl:p-[0.4rem] rounded-none",
-        secondary:
-          "text-grey-800 text-[13px] xl:text-[1.3rem] font-[700] leading-[20px] xl:leading-[2rem] flex items-center justify-center gap-x-[4px] xl:gap-x-[0.4rem] px-[12px] xl:px-[1.2rem] py-[4px] xl:py-[0.4rem] w-full mb-[8px] xl:mb-[0.8rem]",
+        secondary: cn(
+          "text-[13px] text-grey-800 font-[700] leading-[20px] flex justify-center items-center gap-x-[4px] px-[12px] py-[4px]",
+          "xl:text-[1.3rem] xl:leading-[2rem] xl:gap-x-[0.4rem] xl:px-[1.2rem] xl:py-[0.4rem]"
+        ),
+        icon: cn(
+          "flex items-center justify-center w-[36px] h-[36px] border-none",
+          "xl:w-[3.6rem] xl:h-[3.6rem]"
+        ),
+        destructive: cn(
+          "text-[14px] text-primary-500 font-[700] leading-[20px] flex items-center justify-center gap-x-[8px] bg-base-white w-fit px-[16px] py-[4px]",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:gap-x-[0.8rem] xl:px-[1.6rem] xl:py-[0.4rem]"
+        ),
+        user_details: cn(
+          "border-none outline-none p-[4px] rounded-none",
+          "xl:p-[0.4rem]"
+        ),
         navigation_item: cn(
-          "flex justify-between items-center w-full py-[4px] xl:py-[0.4rem] bg-transparent border-none",
-          "text-[14px] xl:text-[1.4rem] text-grey-800 leading-[20px] xl:leading-[2rem] font-[500]",
-          "[&[data-active='true']]:text-primary-500 [&[data-active='true']]:bg-primary-50  hover:text-primary-500 hover:bg-primary-50",
+          "text-[14px] text-grey-800 font-[500] leading-[20px] flex justify-between items-center w-full py-[4px] bg-transparent border-none",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:py-[0.4rem]",
+          "[&[data-active='true']]:text-primary-500 [&[data-active='true']]:bg-primary-50 hover:text-primary-500 hover:bg-primary-50",
           "transition-all duration-300 ease-in"
         ),
-        destructive:
-          "text-[14px] xl:text-[1.4rem] font-[700] leading-[20px] xl:leading-[2rem] text-primary-500 flex items-center justify-center gap-x-[8px] xl:gap-x-[0.8rem] bg-base-white w-fit px-[16px] xl:px-[1.6rem] py-[4px] xl:py-[0.4rem]",
-        select:
-          "text-[14px] xl:text-[1.4rem] text-grey-800 font-[500] leading-[20px] xl:leading-[2rem] tracking-[-0.2px] xl:tracking-[-0.02rem] flex items-center justify-between gap-x-[8px] xl:gap-x-[0.8rem] bg-base-white w-full pl-[12px] xl:pl-[1.2rem] pr-[12px] xl:pr-[1.2rem] py-[10px] xl:py-[1rem]",
-        discount: cn(
-          "text-[13px] xl:text-[1.3rem] font-[700] leading-[20px] xl:leading-[2rem] px-[12px] xl:px-[1.2rem] py-[4px] xl:py-[0.4rem]"
+        select: cn(
+          "text-[14px] text-grey-800 font-[500] leading-[20px] tracking-[-0.2px] flex items-center justify-between gap-x-[8px] bg-base-white w-full pl-[12px] pr-[12px] py-[10px]",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[-0.02rem] xl:gap-x-[0.8rem] xl:pl-[1.2rem] xl:pr-[1.2rem] xl:py-[1rem]"
         ),
         burger_button: "flex items-center justify-center border-none",
       },

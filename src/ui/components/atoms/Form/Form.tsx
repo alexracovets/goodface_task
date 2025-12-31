@@ -77,10 +77,14 @@ const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 );
 
-export const formItemVariants = cva("relative ease-in-out duration-300", {
+export const formItemVariants = cva("relative", {
   variants: {
     variant: {
-      default: "flex flex-col gap-[8px] xl:gap-[0.8rem] w-full",
+      default: cn(
+        "flex flex-col gap-[8px] w-full",
+        "xl:gap-[0.8rem]",
+        "transition-all duration-300 ease-in-out"
+      ),
     },
   },
   defaultVariants: {
@@ -103,12 +107,14 @@ function FormItem({ className, variant = "default", ...props }: FormItemType) {
 }
 
 export const variantsFormLabel = cva(
-  "data-[error=true]:text-destructive cursor-pointer w-fit",
+  "cursor-pointer w-fit data-[error=true]:text-destructive",
   {
     variants: {
       variant: {
-        default:
-          "text-[14px] xl:text-[1.4rem] text-grey-800 font-[700] leading-[20px] xl:leading-[2rem] tracking-[0.2px] xl:tracking-[0.02rem]",
+        default: cn(
+          "text-[14px] text-grey-800 font-[700] leading-[20px] tracking-[0.2px]",
+          "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[0.02rem]"
+        ),
       },
     },
     defaultVariants: {
@@ -196,13 +202,17 @@ function FormMessage({ className, ...props }: React.ComponentProps<"p">) {
               ease: "easeInOut",
               height: { duration: 0.2 },
             }}
-            className="flex items-center w-full rounded-[4px] xl:rounded-[0.4rem]"
+            className={cn(
+              "flex items-center w-full rounded-[4px]",
+              "xl:rounded-[0.4rem]"
+            )}
           >
             <p
               data-slot="form-message"
               id={formMessageId}
               className={cn(
-                "text-[14px] xl:text-[1.4rem] text-red-500 leading-[20px] xl:leading-[2rem] tracking-[-0.2px] xl:tracking-[-0.02rem] w-full",
+                "text-[14px] text-red-500 leading-[20px] tracking-[-0.2px] w-full",
+                "xl:text-[1.4rem] xl:leading-[2rem] xl:tracking-[-0.02rem]",
                 className
               )}
               {...props}

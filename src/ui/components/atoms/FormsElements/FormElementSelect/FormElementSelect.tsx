@@ -86,8 +86,9 @@ export const FormElementSelect = ({
                                             </div>
                                         </Select.Value>
                                         <ChevronDownIcon
+                                            variant="icon"
                                             className={cn(
-                                                "text-grey-700 w-[20px] xl:w-[2rem] h-[20px] xl:h-[2rem] transition-all duration-300 ease-in-out",
+                                                "text-grey-700 transition-all duration-300 ease-in-out",
                                                 open && "rotate-180"
                                             )}
                                         />

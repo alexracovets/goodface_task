@@ -10,7 +10,8 @@ export const variantsContainer = cva("", {
   variants: {
     variant: {
       default: cn(
-        "p-[24px] xl:p-[2.4rem] bg-base-white border-[1px] xl:border-[0.1rem] border-grey-200 rounded-[8px] xl:rounded-[0.8rem]",
+        "bg-base-white border-[1px] border-grey-200 p-[24px] rounded-[8px]",
+        "xl:border-[0.1rem] xl:p-[2.4rem] xl:rounded-[0.8rem]",
         "max-md:p-[16px]"
       ),
     },
