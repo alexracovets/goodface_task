@@ -39,7 +39,7 @@ export const SubscriptionCycle = ({
           >
             <RadioGroupItem value={option.value} id={option.value} />
             {option.label}
-            {option.discount && (
+            {option.discount > 0 && (
               <AtomText variant="discount">Save {option.discount}%</AtomText>
             )}
           </AtomFormLabel>
