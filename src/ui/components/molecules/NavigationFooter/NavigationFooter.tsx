@@ -9,7 +9,7 @@ export const NavigationFooter = () => {
         <AtomText variant="user_name">Henry Smith</AtomText>
         <AtomText variant="user_email">henry.smith@gmail.com</AtomText>
       </div>
-      <AtomButton variant="user_details">
+      <AtomButton variant="user_details" aria-label="User details">
         <DotsVerticalIcon />
       </AtomButton>
     </div>

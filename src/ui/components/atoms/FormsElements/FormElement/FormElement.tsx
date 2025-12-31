@@ -80,6 +80,13 @@ export const FormElement = ({
             },
           });
         };
+        
+        // If label is not present, add aria-label for accessibility
+        // Використовуємо aria-label з props, або placeholder, або name як доступну назву
+        const propsWithAriaLabel = props as { "aria-label"?: string };
+        const ariaLabel = label
+          ? undefined
+          : propsWithAriaLabel["aria-label"] || placeholder || name;
 
         return (
           <FormItem
@@ -111,6 +118,7 @@ export const FormElement = ({
                 disabled={disabled}
                 onChange={handleChange}
                 variant={variant}
+                aria-label={ariaLabel}
               />
             </FormControl>
           </FormItem>

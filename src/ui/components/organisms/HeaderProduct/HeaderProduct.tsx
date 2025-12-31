@@ -7,7 +7,7 @@ export const HeaderProduct = () => {
     <header>
       <nav>
         <AtomLink href="/" variant="default">
-          <AtomButton variant="secondary">
+          <AtomButton variant="secondary" aria-label="Back to all">
             <ChevronLeftIcon variant="icon_small" />
             Back to all
           </AtomButton>

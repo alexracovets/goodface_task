@@ -35,6 +35,10 @@ const meta = {
       control: "boolean",
       description: "Whether the slider is disabled",
     },
+    "aria-label": {
+      control: "text",
+      description: "Accessible label for the slider (required for accessibility)",
+    },
   },
 } satisfies Meta<typeof Slider>;
 
@@ -150,6 +154,7 @@ export const Default: Story = {
     defaultValue: [50],
     min: 0,
     max: 100,
+    "aria-label": "Slider",
   },
   render: (args) => <SliderWithState {...args} />,
 };
@@ -159,6 +164,7 @@ export const Range: Story = {
     defaultValue: [25, 75],
     min: 0,
     max: 100,
+    "aria-label": "Range slider",
   },
   render: (args) => <RangeSliderWithState {...args} />,
 };
@@ -168,6 +174,7 @@ export const CustomRange: Story = {
     defaultValue: [10],
     min: 0,
     max: 50,
+    "aria-label": "Custom range slider",
   },
   render: (args) => <CustomRangeSliderWithState {...args} />,
 };
@@ -177,6 +184,7 @@ export const LargeRange: Story = {
     defaultValue: [500],
     min: 0,
     max: 1000,
+    "aria-label": "Large range slider",
   },
   render: (args) => <LargeRangeSliderWithState {...args} />,
 };
@@ -187,6 +195,7 @@ export const Disabled: Story = {
     min: 0,
     max: 100,
     disabled: true,
+    "aria-label": "Disabled slider",
   },
   render: (args) => <SliderWithState {...args} />,
 };

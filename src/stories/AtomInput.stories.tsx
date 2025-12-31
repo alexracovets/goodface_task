@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { fn } from "storybook/test";
+import { fn, expect, within } from "storybook/test";
 
 import { AtomInput } from "@atoms";
 
@@ -37,6 +37,10 @@ const meta = {
       control: "text",
       description: "Input value",
     },
+    "aria-label": {
+      control: "text",
+      description: "Accessible label for the input (required when no visible label is present)",
+    },
   },
   args: { onChange: fn() },
 } satisfies Meta<typeof AtomInput>;
@@ -49,6 +53,14 @@ export const Default: Story = {
     variant: "default",
     placeholder: "Enter text...",
     type: "text",
+    "aria-label": "Text input",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByLabelText("Text input");
+    
+    await expect(input).toBeInTheDocument();
+    await expect(input).toHaveAttribute("aria-label", "Text input");
   },
 };
 
@@ -57,6 +69,14 @@ export const DiscountCode: Story = {
     variant: "discount_code",
     placeholder: "Enter discount code",
     type: "text",
+    "aria-label": "Discount code",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByLabelText("Discount code");
+    
+    await expect(input).toBeInTheDocument();
+    await expect(input).toHaveAttribute("aria-label", "Discount code");
   },
 };
 
@@ -65,5 +85,14 @@ export const WithValue: Story = {
     variant: "default",
     value: "Sample text",
     type: "text",
+    "aria-label": "Text input",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const input = canvas.getByLabelText("Text input");
+    
+    await expect(input).toBeInTheDocument();
+    await expect(input).toHaveValue("Sample text");
+    await expect(input).toHaveAttribute("aria-label", "Text input");
   },
 };

@@ -56,6 +56,7 @@ const SliderField = ({
           onChange(newValue[0]);
         }}
         name={name}
+        aria-label={`Proxies count, from ${min} to ${max}`}
       />
       <AtomWrapper className="relative w-full h-[20px] xl:h-8">
         {Array.from(
@@ -131,6 +132,7 @@ export const ProxiesCountPick = ({
 
       <AtomButton
         variant="destructive"
+        aria-label={isSlider ? "Enter a custom quantity" : "Select from the range"}
         type="button"
         onClick={() => setIsSlider((prev) => !prev)}
       >

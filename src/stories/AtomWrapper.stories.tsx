@@ -166,13 +166,13 @@ export const NotificationCount: Story = {
 export const GoodfaceWrapper: Story = {
   args: {
     variant: "goodface_wrapper",
-    className: "bg-primary-400 w-[1440px] max-w-full",
+    className: "bg-primary-400 w-[800px] max-w-full",
     children: (
       <>
-        <AtomWrapper className="bg-grey-500 w-[280px] flex justify-center items-center">
+        <AtomWrapper className="bg-grey-200 w-[280px] flex justify-center items-center">
           280px (sidebar)
         </AtomWrapper>
-        <AtomWrapper className="bg-grey-200 flex justify-center items-center">
+        <AtomWrapper className="bg-primary-400 flex justify-center items-center">
           auto (main)
         </AtomWrapper>
       </>
@@ -360,7 +360,7 @@ export const SliderSeparatorItem: Story = {
 export const SelectDropdownItem: Story = {
   args: {
     variant: "select_dropdown_item",
-    className: "bg-primary-400",
+    className: "bg-primary-200",
     children: (
       <>
         <AtomText>Dropdown Item</AtomText>

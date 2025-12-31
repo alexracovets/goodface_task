@@ -26,6 +26,7 @@ export const NavigationContent = () => {
         <NewProxies />
         <AtomWrapper variant="hero_content">
           <AtomButton
+            aria-label="Go to dashboard"
             variant="navigation_item"
             data-active={"#" === pathname}
             asChild

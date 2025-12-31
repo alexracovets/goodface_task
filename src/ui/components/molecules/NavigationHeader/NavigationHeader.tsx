@@ -64,7 +64,7 @@ export const NavigationHeader = ({
           <Notification />
           {isInsideSheet && (
             <SheetTrigger asChild>
-              <AtomButton variant="burger_button" aria-label="Open menu">
+              <AtomButton variant="burger_button" aria-label="Navigation menu">
                 <BurgerIcon
                   className="w-[40px] xl:w-16 h-[40px] xl:h-16"
                   active={isModal}

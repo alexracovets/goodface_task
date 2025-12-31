@@ -25,7 +25,7 @@ export const OrderSummaryAside = () => {
             <AsideTotalPrice />
           </AtomWrapper>
         </Container>
-        <AtomButton variant="primary" type="button">
+        <AtomButton variant="primary" type="button" aria-label="Continue to checkout">
           Continue to checkout
         </AtomButton>
         <CreditPay />

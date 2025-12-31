@@ -68,7 +68,11 @@ export const FormElementSelect = ({
                 disabled={options.length === 0}
               >
                 <Select.Trigger aria-label={label} asChild>
-                  <AtomButton type="button" variant="default">
+                  <AtomButton
+                    type="button"
+                    variant="default"
+                    aria-label={label}
+                  >
                     <Select.Value placeholder={placeholder} asChild>
                       <div className="flex items-center gap-x-[8px] xl:gap-x-[0.8rem]">
                         {selectedOption?.image ? (

@@ -6,14 +6,21 @@ import * as SliderPrimitive from "@radix-ui/react-slider";
 import { DragIcon } from "@atoms";
 import { cn } from "@utils";
 
+interface SliderProps extends React.ComponentProps<
+  typeof SliderPrimitive.Root
+> {
+  "aria-label"?: string;
+}
+
 export const Slider = ({
   className,
   defaultValue,
   value,
   min = 0,
   max = 100,
+  "aria-label": ariaLabel,
   ...props
-}: React.ComponentProps<typeof SliderPrimitive.Root>) => {
+}: SliderProps) => {
   const _values = React.useMemo(
     () =>
       Array.isArray(value)
@@ -23,6 +30,17 @@ export const Slider = ({
           : [min, max],
     [value, defaultValue, min, max]
   );
+
+  // Генеруємо aria-label для кожного thumb, якщо не передано явно
+  const getThumbAriaLabel = (index: number, thumbValue: number) => {
+    if (ariaLabel) {
+      return _values.length > 1
+        ? `${ariaLabel} ${index + 1}, value ${thumbValue}`
+        : ariaLabel;
+    }
+    // Автоматична генерація на основі значення та діапазону
+    return `Slider value ${thumbValue} of ${min} to ${max}`;
+  };
 
   return (
     <SliderPrimitive.Root
@@ -51,33 +69,37 @@ export const Slider = ({
         />
       </SliderPrimitive.Track>
       {max > 0 &&
-        Array.from({ length: _values.length }, (_, index) => (
-          <SliderPrimitive.Thumb
-            data-slot="slider-thumb"
-            key={index}
-            className="flex justify-center items-center disabled:pointer-events-none disabled:opacity-50 border-[1px] xl:border-[0.1rem] border-primary-500 rounded-[4px] xl:rounded-[0.4rem] relative cursor-pointer"
-          >
-            <div className="absolute bottom-[calc(100%+12px)] xl:bottom-[calc(100%+1.2rem)] left-[50%] translate-x-[-50%] px-[8px] xl:px-[0.8rem] py-[4px] xl:py-[0.4rem] bg-primary-500 text-white rounded-[4px] xl:rounded-[0.4rem] transition-all ease-in-out whitespace-nowrap">
-              {value + " IP"}
-            </div>
-            <div className="absolute bottom-[calc(100%)] left-[50%] translate-x-[-50%]">
-              <div className="w-[18px] xl:w-[1.8rem] h-[12px] xl:h-[1.2rem]">
-                <svg
-                  viewBox="0 0 18 12"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  preserveAspectRatio="xMidYMid slice"
-                >
-                  <path
-                    d="M 12 6 C 12 9.314 14.686 12 18 12 L 0 12 C 3.314 12 6 9.314 6 6 C 6 2.703 3.34 0.027 0.051 0 L 18 0 C 14.7 0 12 2.88 12 6 Z"
-                    fill="#5547EB"
-                  ></path>
-                </svg>
+        Array.from({ length: _values.length }, (_, index) => {
+          const thumbValue = _values[index] ?? min;
+          return (
+            <SliderPrimitive.Thumb
+              data-slot="slider-thumb"
+              key={index}
+              aria-label={getThumbAriaLabel(index, thumbValue)}
+              className="flex justify-center items-center disabled:pointer-events-none disabled:opacity-50 border-[1px] xl:border-[0.1rem] border-primary-500 rounded-[4px] xl:rounded-[0.4rem] relative cursor-pointer"
+            >
+              <div className="text-[16px] xl:text-[1.6rem] absolute bottom-[calc(100%+12px)] xl:bottom-[calc(100%+1.2rem)] left-[50%] translate-x-[-50%] px-[8px] xl:px-[0.8rem] py-[4px] xl:py-[0.4rem] bg-primary-500 text-white rounded-[4px] xl:rounded-[0.4rem] transition-all ease-in-out whitespace-nowrap">
+                {thumbValue} IP
               </div>
-            </div>
-            <DragIcon />
-          </SliderPrimitive.Thumb>
-        ))}
+              <div className="absolute bottom-[calc(100%)] left-[50%] translate-x-[-50%]">
+                <div className="w-[18px] xl:w-[1.8rem] h-[12px] xl:h-[1.2rem]">
+                  <svg
+                    viewBox="0 0 18 12"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice"
+                  >
+                    <path
+                      d="M 12 6 C 12 9.314 14.686 12 18 12 L 0 12 C 3.314 12 6 9.314 6 6 C 6 2.703 3.34 0.027 0.051 0 L 18 0 C 14.7 0 12 2.88 12 6 Z"
+                      fill="#5547EB"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+              <DragIcon />
+            </SliderPrimitive.Thumb>
+          );
+        })}
     </SliderPrimitive.Root>
   );
 };

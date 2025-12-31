@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
-import { fn } from "storybook/test";
+import { fn, expect, within, userEvent } from "storybook/test";
 
 import {
   AtomButton,
@@ -45,6 +45,10 @@ const meta = {
       control: "text",
       description: "Content of the button",
     },
+    "aria-label": {
+      control: "text",
+      description: "Accessible label for icon buttons",
+    },
   },
   args: { onClick: fn() },
 } satisfies Meta<typeof AtomButton>;
@@ -57,12 +61,30 @@ export const Default: Story = {
     variant: "default",
     children: "Button",
   },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Button" });
+    
+    await expect(button).toBeInTheDocument();
+    await expect(button).toHaveAttribute("data-slot", "button");
+    
+    if (args.onClick) {
+      await userEvent.click(button);
+      await expect(args.onClick).toHaveBeenCalled();
+    }
+  },
 };
 
 export const Primary: Story = {
   args: {
     variant: "primary",
     children: "Primary",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Primary" });
+    
+    await expect(button).toBeInTheDocument();
   },
 };
 
@@ -76,6 +98,7 @@ export const Secondary: Story = {
 export const Icon: Story = {
   args: {
     variant: "icon",
+    "aria-label": "Notifications",
     children: (
       <>
         <BellIcon />
@@ -84,6 +107,13 @@ export const Icon: Story = {
         </AtomWrapper>
       </>
     ),
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Notifications" });
+    
+    await expect(button).toBeInTheDocument();
+    await expect(button).toHaveAttribute("aria-label", "Notifications");
   },
 };
 
@@ -102,13 +132,29 @@ export const Destructive: Story = {
 export const UserDetails: Story = {
   args: {
     variant: "user_details",
+    "aria-label": "User menu",
     children: <DotsVerticalIcon />,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "User menu" });
+    
+    await expect(button).toBeInTheDocument();
+    await expect(button).toHaveAttribute("aria-label", "User menu");
   },
 };
 
 export const BurgerButton: Story = {
   args: {
     variant: "burger_button",
+    "aria-label": "Open menu",
     children: <BurgerIcon />,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const button = canvas.getByRole("button", { name: "Open menu" });
+    
+    await expect(button).toBeInTheDocument();
+    await expect(button).toHaveAttribute("aria-label", "Open menu");
   },
 };

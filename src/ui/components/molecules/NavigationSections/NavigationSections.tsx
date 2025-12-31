@@ -128,6 +128,7 @@ export const NavigationSections = () => {
               {section.content.map((item) => (
                 <AtomButton
                   key={item.name}
+                  aria-label={`Go to ${item.name}`}
                   variant="navigation_item"
                   data-active={item.link === pathname}
                   asChild

@@ -33,7 +33,7 @@ const SheetExample = ({
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
-        <AtomButton>Open Sheet</AtomButton>
+        <AtomButton aria-label="Open Sheet">Open Sheet</AtomButton>
       </SheetTrigger>
       <SheetContent side={side}>
         <SheetHeader>
@@ -44,7 +44,7 @@ const SheetExample = ({
           <AtomText>Sheet content goes here.</AtomText>
         </div>
         <SheetFooter>
-          <AtomButton variant="primary">Save</AtomButton>
+          <AtomButton variant="primary" aria-label="Save">Save</AtomButton>
         </SheetFooter>
       </SheetContent>
     </Sheet>
