@@ -1,7 +1,7 @@
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { memo, useMemo } from "react";
 
 import { Form, AtomWrapper, FormDescription } from "@atoms";
@@ -36,13 +36,14 @@ export const FormProxies = () => {
     },
   });
 
-  const checkMaxProxies = useMemo(() => {
-    return (count: number) => (count > 1000 ? 1000 : count);
-  }, []);
+  const locationAvailable = useWatch({
+    control: form.control,
+    name: "location.available",
+  }) || 0;
 
   const maxProxies = useMemo(() => {
-    return checkMaxProxies(form.getValues("location.available") || 0);
-  }, [form, checkMaxProxies]);
+    return locationAvailable > 1000 ? 1000 : locationAvailable;
+  }, [locationAvailable]);
 
   return (
     <Form {...form}>
