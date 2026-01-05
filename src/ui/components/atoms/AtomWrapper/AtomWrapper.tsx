@@ -77,7 +77,7 @@ export const variantsAtomWrapper = cva("", {
         "transition-all duration-300 ease-in-out"
       ),
       dropdown_item_additional: cn(
-        "text-[12px] text-grey-500 font-[500] leading-[16px] tracking-[0.2px]",
+        "text-[12px] text-grey-500 font-[500] leading-[16px] tracking-[0.2px] whitespace-nowrap",
         "xl:text-[1.2rem] xl:leading-[1.6rem] xl:tracking-[0.02rem]"
       ),
       additional_content: cn(
