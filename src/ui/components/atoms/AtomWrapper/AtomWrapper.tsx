@@ -103,6 +103,9 @@ export const variantsAtomWrapper = cva("", {
         "xl:gap-x-[2.4rem]"
       ),
       credit_pay: "flex justify-center items-center",
+      navigation_footer: cn(
+        "flex justify-between items-center gap-x-[8px] xl:gap-x-[0.8rem] py-[12px] xl:py-[1.2rem] pr-[12px] xl:pr-[1.2rem] pl-[16px] xl:pl-[1.6rem] border-t border-grey-200"
+      ),
     },
   },
   defaultVariants: {

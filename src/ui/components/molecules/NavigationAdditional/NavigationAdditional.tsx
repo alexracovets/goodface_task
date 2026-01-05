@@ -21,15 +21,7 @@ const navigationAdditional = [
     icon: <ReceiptIcon />,
     options: [
       {
-        name: "Billing 1",
-        link: "#",
-      },
-      {
-        name: "Billing 2",
-        link: "#",
-      },
-      {
-        name: "Billing 3",
+        name: "Item",
         link: "#",
       },
     ],
@@ -39,15 +31,7 @@ const navigationAdditional = [
     icon: <HelpCircle />,
     options: [
       {
-        name: "Help 1",
-        link: "#",
-      },
-      {
-        name: "Help 2",
-        link: "#",
-      },
-      {
-        name: "Help 3",
+        name: "Item",
         link: "#",
       },
     ],
